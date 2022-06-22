@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/setting_push_notifications_daily_category" android:key="@string/pref_push_notifications_daily">
+        <androidx.preference.SwitchPreferenceCompat android:title="@string/setting_push_notifications_daily_title" android:key="@string/pref_push_notifications_daily_switch" android:summary="@string/setting_push_notifications_daily_summary" app:widgetLayout="@layout/pref_widget_switch_compat" />
+        <com.blinkslabs.blinkist.android.uicore.widgets.WidgetTextPreference android:title="@string/setting_push_notifications_daily_time_title" android:key="@string/pref_push_notifications_daily_time" android:summary="@string/setting_push_notifications_daily_time_summary" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/setting_push_notifications_content_category" android:key="@string/pref_push_notifications_content">
+        <androidx.preference.SwitchPreferenceCompat android:title="@string/setting_push_notifications_content_title" android:key="@string/pref_push_notifications_content_switch" android:summary="@string/setting_push_notifications_content_summary" app:widgetLayout="@layout/pref_widget_switch_compat" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/setting_push_notifications_product_category" android:key="@string/pref_push_notifications_product">
+        <androidx.preference.SwitchPreferenceCompat android:title="@string/setting_push_notifications_product_title" android:key="@string/pref_push_notifications_product_switch" android:summary="@string/setting_push_notifications_product_summary" app:widgetLayout="@layout/pref_widget_switch_compat" />
+        <androidx.preference.SwitchPreferenceCompat android:title="@string/setting_push_notifications_new_shortcast_episodes_title" android:key="@string/pref_push_notifications_shortcast_updates_switch" android:summary="@string/setting_push_notifications_new_shortcast_episodes_summary" app:widgetLayout="@layout/pref_widget_switch_compat" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+</androidx.preference.PreferenceScreen>

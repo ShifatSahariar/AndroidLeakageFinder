@@ -1,0 +1,20 @@
+.class public interface abstract Landroidx/compose/foundation/relocation/BringIntoViewParent;
+.super Ljava/lang/Object;
+.source "BringIntoView.kt"
+
+
+# virtual methods
+.method public abstract bringChildIntoView(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/layout/LayoutCoordinates;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/compose/ui/geometry/Rect;",
+            "Landroidx/compose/ui/layout/LayoutCoordinates;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:id="@id/checked" android:drawable="@drawable/ic_for_you_ia_selected" />
+    <item android:id="@id/normal" android:drawable="@drawable/ic_for_you_ia" />
+    <transition android:drawable="@drawable/ic_anim_for_you_selected" android:toId="@id/checked" android:fromId="@id/normal" />
+</animated-selector>

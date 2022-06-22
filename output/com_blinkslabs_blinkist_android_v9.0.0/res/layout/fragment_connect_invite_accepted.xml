@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinatorLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:focusableInTouchMode="true" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontCollapsingToolbarLayout android:id="@id/collapsingToolbar" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="@dimen/home_appbar_layout_height" app:contentScrim="?colorElevation" app:expandedTitleMarginStart="@dimen/spacing_16" app:layout_scrollFlags="scroll|exitUntilCollapsed" app:statusBarScrim="?colorElevation" app:title="@string/connect">
+            <androidx.appcompat.widget.Toolbar android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" />
+            <com.blinkslabs.blinkist.android.uicore.widgets.DividerView android:id="@id/divider" style="@style/BigTitleUnderline" />
+        </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontCollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.blinkslabs.blinkist.android.uicore.widgets.BlinkistSwipeRefreshLayout android:id="@id/pullToRefreshLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:tag="ExploreRecyclerView" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.BlinkistSwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

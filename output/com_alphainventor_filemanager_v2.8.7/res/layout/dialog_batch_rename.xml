@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Widget.AlertDialog.Less"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListView android:id="@id/list" android:background="@color/batch_rename_list_background" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+        <ImageButton android:id="@id/insert_filename" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:contentDescription="@string/dialog_entry_name" app:srcCompat="@drawable/ic_button_copy" style="@style/Widget.AppCompat.Button.Colored" />
+        <ImageButton android:id="@id/insert_number" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:contentDescription="@string/dialog_entry_number" app:srcCompat="@drawable/ic_button_number" style="@style/Widget.AppCompat.Button.Colored" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:baselineAligned="true">
+        <com.alphainventor.filemanager.widget.BaselineTextInputLayout android:id="@id/filename_layout" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" app:counterEnabled="false" app:hintEnabled="false">
+            <com.google.android.material.textfield.TextInputEditText android:textAppearance="?android:textAppearanceMedium" android:id="@id/file_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:maxLength="255" android:inputType="textNoSuggestions" android:imeOptions="actionDone" />
+        </com.alphainventor.filemanager.widget.BaselineTextInputLayout>
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="?editTextColor" android:id="@id/dot" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="." />
+        <com.alphainventor.filemanager.widget.BaselineTextInputLayout android:id="@id/ext_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:counterEnabled="false" app:hintEnabled="false">
+            <com.google.android.material.textfield.TextInputEditText android:textAppearance="?android:textAppearanceMedium" android:id="@id/file_ext" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minWidth="54.0dip" android:singleLine="true" android:maxLength="255" android:inputType="textNoSuggestions" android:imeOptions="actionDone" />
+        </com.alphainventor.filemanager.widget.BaselineTextInputLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.blinkslabs.blinkist.android.feature.purchase.inspirational.InspirationItem android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:ellipsize="end" android:gravity="center" android:id="@id/inspirationTitle" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:lineSpacingMultiplier="1.2" android:fontFamily="@font/cera_pro_bold" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" style="@style/T24" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:id="@id/inspirationWebViewContainer" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.blinkslabs.blinkist.android.feature.purchase.inspirational.InspirationWebView android:id="@id/inspirationWebPage" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <com.blinkslabs.blinkist.android.uicore.uicomponents.loadingwidgets.LoadingImageView android:id="@id/inspirationImage" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:importantForAccessibility="no" />
+        </FrameLayout>
+    </LinearLayout>
+</com.blinkslabs.blinkist.android.feature.purchase.inspirational.InspirationItem>

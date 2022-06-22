@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Widget.AlertDialog.Less"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="bottom" android:id="@id/compress_file_name_tv_compress_file_extension" android:paddingRight="@dimen/abc_control_padding_material" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/zip_file_extension" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <EditText android:textAppearance="?android:textAppearanceMedium" android:id="@id/compress_file_name_et_compress_file_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:selectAllOnFocus="true" android:layout_toLeftOf="@id/compress_file_name_tv_compress_file_extension" android:layout_centerVertical="true" android:inputType="textNoSuggestions" android:imeOptions="actionDone" />
+    </RelativeLayout>
+</LinearLayout>

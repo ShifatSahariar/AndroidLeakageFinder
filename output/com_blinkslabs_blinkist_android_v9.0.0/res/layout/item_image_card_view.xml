@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView android:id="@id/imageCardView" android:focusable="true" android:clickable="true" android:layout_width="96.0dip" android:layout_height="96.0dip" android:layout_marginTop="@dimen/spacing_8" android:importantForAccessibility="no" android:layout_marginStart="@dimen/spacing_8" android:layout_marginEnd="@dimen/spacing_8" app:cardCornerRadius="@dimen/rounded_corner_radius" app:cardElevation="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:rippleColor="@color/light_grey">
+        <com.blinkslabs.blinkist.android.uicore.uicomponents.loadingwidgets.LoadingImageView android:id="@id/imageCardImageView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no" app:placeholder_color="@color/light_grey" />
+    </com.google.android.material.card.MaterialCardView>
+    <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/badge" android:background="@drawable/bg_badge" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginEnd="@dimen/spacing_8" android:fontFeatureSettings="tnum, lnum" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/T14White" />
+</androidx.constraintlayout.widget.ConstraintLayout>

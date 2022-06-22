@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="end" android:id="@id/titleTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/T28" />
+    <TextView android:ellipsize="end" android:id="@id/authorTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_8" style="@style/T16Secondary" />
+    <TextView android:ellipsize="end" android:id="@id/narratorTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:layout_marginBottom="@dimen/spacing_16" style="@style/T14Secondary" />
+</merge>

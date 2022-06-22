@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_8" android:layout_marginBottom="@dimen/spacing_16" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/arrowImageView" android:layout_width="27.0dip" android:layout_height="wrap_content" android:adjustViewBounds="true" android:importantForAccessibility="no" app:srcCompat="@drawable/ic_note_arrow_up" app:tint="?colorContainerSurface" />
+    <com.blinkslabs.blinkist.android.uicore.widgets.MaxWidthCardView android:id="@id/cardView" android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="?colorContainerSurface" app:cardCornerRadius="@dimen/rounded_corner_radius" app:cardElevation="0.0dip" app:cardMaxWidth="@dimen/content_card_max_width">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:ellipsize="end" android:id="@id/overlineTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:maxLines="1" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/arrowImageView" style="@style/P12" />
+            <TextView android:id="@id/noteTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_8" android:layout_marginBottom="@dimen/spacing_24" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" style="@style/R18" />
+        </LinearLayout>
+    </com.blinkslabs.blinkist.android.uicore.widgets.MaxWidthCardView>
+</LinearLayout>

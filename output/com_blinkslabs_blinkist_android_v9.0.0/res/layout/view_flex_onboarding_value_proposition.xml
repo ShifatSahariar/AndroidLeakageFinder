@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/pageRoot" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/pageTextView" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/spacing_24" android:layout_marginBottom="@dimen/spacing_16" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" app:autoSizeTextType="uniform" app:layout_constraintBottom_toTopOf="@id/pageImageView" app:layout_constraintTop_toTopOf="parent" style="@style/T36" />
+    <com.blinkslabs.blinkist.android.uicore.uicomponents.loadingwidgets.LoadingImageView android:id="@id/pageImageView" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="16:9" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

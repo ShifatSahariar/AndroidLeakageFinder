@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="failed">ചിത്രം ലോഡുചെയ്യാനായില്ല</string>
+    <string name="photo_view_count" formatted="false">%d / %d</string>
+    <string name="retry">വീണ്ടും ശ്രമിക്കുക</string>
+    <string name="titles" formatted="false">%s, %s</string>
+</resources>

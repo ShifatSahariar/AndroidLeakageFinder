@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/bar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/app_list_swipe_refresh_layout" app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.tabs.TabLayout android:id="@id/tab_layout" android:background="@drawable/bg_path_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:tabGravity="fill" app:tabIndicatorHeight="4.0dip" app:tabMinWidth="105.0dip" app:tabMode="fixed" app:tabSelectedTextColor="@color/pathbar_text_selected" app:tabTextColor="@color/pathbar_text_normal" />
+        <com.alphainventor.filemanager.widget.PathBar android:id="@id/pathbar" android:background="@drawable/bg_path_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/app_list_swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/bottom_menu_layout" app:layout_constraintTop_toBottomOf="@id/bar_container">
+        <com.alphainventor.filemanager.widget.MyViewPager android:id="@id/app_tabs_vp_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <View android:id="@id/bottom_menu_safe_area" android:focusable="false" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/bottom_menu_safe_area_height" android:importantForAccessibility="no" app:layout_constraintBottom_toTopOf="@id/bottom_menu_layout" />
+    <include android:id="@id/bottom_menu_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/app_list_swipe_refresh_layout" layout="@layout/list_bottom_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

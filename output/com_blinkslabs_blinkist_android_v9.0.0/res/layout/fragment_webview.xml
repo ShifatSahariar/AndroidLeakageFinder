@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/viewToolbarLayout" layout="@layout/view_toolbar" />
+    <WebView android:id="@id/webView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.blinkslabs.blinkist.android.uicore.uicomponents.loadingwidgets.BlockingLoadingAnimationView android:id="@id/loadingAnimationView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

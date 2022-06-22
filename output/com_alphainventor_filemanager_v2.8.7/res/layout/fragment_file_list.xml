@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.alphainventor.filemanager.widget.PathBar android:id="@id/pathbar" android:background="@drawable/bg_path_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/file_list_layout" app:layout_constraintTop_toTopOf="parent" />
+    <include android:id="@id/file_list_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toTopOf="@id/snackbar_container" app:layout_constraintTop_toBottomOf="@id/pathbar" layout="@layout/file_list_layout" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/snackbar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/bottom_menu_layout" app:layout_constraintTop_toBottomOf="@id/file_list_layout" />
+    <View android:id="@id/bottom_menu_safe_area" android:focusable="false" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/bottom_menu_safe_area_height" android:importantForAccessibility="no" app:layout_constraintBottom_toTopOf="@id/bottom_menu_layout" />
+    <include android:id="@id/bottom_menu_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/snackbar_container" layout="@layout/list_bottom_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

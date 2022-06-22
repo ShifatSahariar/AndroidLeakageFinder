@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.preference.PreferenceCategory android:title="@string/account_settings_category_accounts" android:key="AccountsCategory">
+        <androidx.preference.Preference android:title="@string/account_facebook_title" android:key="@string/pref_facebook_account" app:isPreferenceVisible="false" />
+        <androidx.preference.Preference android:title="@string/account_google_title" android:key="@string/pref_google_account" app:isPreferenceVisible="false" />
+        <androidx.preference.Preference android:title="@string/account_blinkist_title" android:key="@string/pref_blinkist_account" app:isPreferenceVisible="false" />
+        <androidx.preference.Preference android:title="@string/account_settings_add_blinkist_account" android:key="@string/pref_add_blinkist_account" app:isPreferenceVisible="false" />
+        <androidx.preference.Preference android:title="@string/account_settings_empty_error_title" android:key="@string/pref_info_unavailable" app:isPreferenceVisible="false" />
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

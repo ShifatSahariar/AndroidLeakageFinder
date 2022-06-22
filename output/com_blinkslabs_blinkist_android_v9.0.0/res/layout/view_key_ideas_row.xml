@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:paddingTop="@dimen/spacing_16" android:paddingBottom="@dimen/spacing_16" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?selectableItemBackground" android:minHeight="80.0dip">
+        <TextView android:id="@id/numberTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLength="2" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" style="@style/T22" />
+        <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/largeContentTextView" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" style="@style/T16Primary" />
+        <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/contentTextView" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginEnd="@dimen/spacing_24" style="@style/T14Placeholder" />
+        <ImageView android:id="@id/iconImageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" android:layout_marginEnd="@dimen/spacing_24" />
+    </LinearLayout>
+</merge>

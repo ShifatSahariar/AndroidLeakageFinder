@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textfield.TextInputLayout android:textColorHint="@color/light_grey" android:id="@id/emailTextLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:errorTextAppearance="@style/ErrorTextAppearance">
+        <EditText android:id="@id/emailTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:hint="@string/email" android:inputType="textEmailAddress">
+            <requestFocus />
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:textColorHint="@color/light_grey" android:id="@id/passwordTextLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:errorTextAppearance="@style/ErrorTextAppearance" app:passwordToggleEnabled="true">
+        <EditText android:id="@id/passwordEditText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:hint="@string/hint_new_password" android:selectAllOnFocus="true" android:inputType="textPassword" android:fontFamily="sans-serif" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

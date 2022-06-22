@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinatorLayout" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/coverRecyclerView" android:paddingTop="@dimen/spacing_32" android:paddingBottom="@dimen/spacing_32" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:background="?colorContainerSurface" android:focusableInTouchMode="true" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="@dimen/cover_appbar_height">
+            <com.blinkslabs.blinkist.android.uicomponents.CollapsibleToolbar android:tag="CoverUp" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="104.0dip" app:layoutDescription="@xml/motion_scene_audiobook_cover_header" app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <ImageView android:id="@id/closeButtonImageView" android:focusable="true" android:clickable="true" android:layout_width="@dimen/minimum_touch_target" android:layout_height="?actionBarSize" android:foreground="?selectableItemBackgroundBorderless" android:scaleType="center" android:contentDescription="@string/accessibility_action_bar_up_description" android:elevation="4.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/toolbarTextView" app:srcCompat="@drawable/ic_arrow_back_24dp" app:tint="?colorContentPrimary" />
+                <TextView android:ellipsize="end" android:gravity="start|center" android:id="@id/toolbarTextView" android:layout_width="0.0dip" android:layout_height="?actionBarSize" android:maxLines="1" style="@style/T16Primary" />
+                <FrameLayout android:id="@id/fakeBottomView" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="24.0dip" app:layout_constraintBottom_toBottomOf="parent" />
+                <TextView android:gravity="center" android:id="@id/inactivePriceTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/T14Primary" />
+                <com.blinkslabs.blinkist.android.feature.discover.cover.ui.CoverPrimaryActionButton android:id="@id/primaryActionButton" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.google.android.material.card.MaterialCardView android:layout_gravity="center" android:id="@id/coverImageCard" android:layout_width="160.0dip" android:layout_height="160.0dip" app:cardElevation="8.0dip">
+                    <com.blinkslabs.blinkist.android.uicore.uicomponents.loadingwidgets.LoadingImageView android:id="@id/bookCoverImageView" android:layout_width="160.0dip" android:layout_height="160.0dip" android:scaleType="centerCrop" app:placeholder_color="?colorContainerSurface" />
+                </com.google.android.material.card.MaterialCardView>
+            </com.blinkslabs.blinkist.android.uicomponents.CollapsibleToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.blinkslabs.blinkist.android.uicore.uicomponents.loadingwidgets.BlockingLoadingAnimationView android:id="@id/loadingAnimationView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

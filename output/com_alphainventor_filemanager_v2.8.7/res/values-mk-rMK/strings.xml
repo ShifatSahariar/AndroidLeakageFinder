@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="failed">Сликата не можеше да се вчита</string>
+    <string name="photo_view_count" formatted="false">%d од %d</string>
+    <string name="retry">Обиди се повторно</string>
+    <string name="titles" formatted="false">%s, %s</string>
+</resources>

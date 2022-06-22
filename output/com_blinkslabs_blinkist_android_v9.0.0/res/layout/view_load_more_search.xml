@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="end" android:id="@id/ctaTextView" android:background="?selectableItemBackground" android:padding="@dimen/spacing_16" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_load_more_cta" android:maxLines="1" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" style="@style/L16ContentAccent" />
+    <View android:id="@id/divider" android:background="?colorBorder" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" />
+</LinearLayout>

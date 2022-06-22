@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.blinkslabs.blinkist.android.uicore.widgets.MaxWidthMatchParentLinearLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" app:fluentMaxWidth="512.0dip">
+        <TextView android:gravity="center" android:id="@id/taglineTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_8" style="@style/T16Raspberry" />
+        <TextView android:gravity="center" android:id="@id/titleTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_8" android:layout_marginBottom="@dimen/spacing_8" style="@style/T28" />
+        <ImageView android:layout_gravity="center" android:id="@id/illustrationImageView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_8" android:importantForAccessibility="no" app:srcCompat="@drawable/illustration_discount_value" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/bulletsContainer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16">
+            <com.blinkslabs.blinkist.android.uicore.uicomponents.BulletPointView android:id="@id/firstBulletPointView" android:layout_width="fill_parent" android:layout_height="fill_parent" app:bulletText="@string/proposition_value_bullet_one" />
+            <com.blinkslabs.blinkist.android.uicore.uicomponents.BulletPointView android:id="@id/secondBulletPointView" android:layout_width="fill_parent" android:layout_height="fill_parent" app:bulletText="@string/proposition_value_bullet_two" />
+            <com.blinkslabs.blinkist.android.uicore.uicomponents.BulletPointView android:id="@id/thirdBulletPointView" android:layout_width="fill_parent" android:layout_height="fill_parent" app:bulletText="@string/proposition_value_bullet_three" />
+        </LinearLayout>
+        <Button android:id="@id/ctaButton" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:text="@string/upgrade_now_softpaywall_users" style="@style/GreenButtonWidget" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.MaxWidthMatchParentLinearLayout>
+</merge>

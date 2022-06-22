@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.blinkslabs.blinkist.android.uicore.uicomponents.SectionHeaderView android:layout_width="fill_parent" android:layout_height="wrap_content" app:title="@string/audiobook_cover_publisher_description" />
+    <com.blinkslabs.blinkist.android.feature.audiobook.ui.ExpandableTextView android:id="@id/expandableTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_16" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" app:buttonStyle="@style/T16ContentAccent" app:collapsedButtonText="@string/audiobook_cover_show_more" app:collapsedLines="6" app:expandedButtonText="@string/audiobook_cover_show_less" app:textViewStyle="@style/P16Secondary" />
+</LinearLayout>

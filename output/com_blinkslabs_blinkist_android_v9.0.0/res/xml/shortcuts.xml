@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:icon="@drawable/ic_shortcut_search" android:enabled="true" android:shortcutId="search" android:shortcutShortLabel="@string/shortcut_label_search" android:shortcutLongLabel="@string/shortcut_label_search">
+        <intent android:targetPackage="com.blinkslabs.blinkist.android" android:action="android.intent.action.VIEW" android:data="blinkistshortcut://search" android:targetClass="com.blinkslabs.blinkist.android.feature.uri.deeplinking.DeepLinkingActivity" />
+    </shortcut>
+    <shortcut android:icon="@drawable/ic_shortcut_pick" android:enabled="true" android:shortcutId="daily_pick" android:shortcutShortLabel="@string/shortcut_label_pick" android:shortcutLongLabel="@string/shortcut_label_pick">
+        <intent android:targetPackage="com.blinkslabs.blinkist.android" android:action="android.intent.action.VIEW" android:data="blinkistshortcut://daily" android:targetClass="com.blinkslabs.blinkist.android.feature.uri.deeplinking.DeepLinkingActivity" />
+    </shortcut>
+</shortcuts>

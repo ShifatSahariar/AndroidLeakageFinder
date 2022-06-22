@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/rootView" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontCollapsingToolbarLayout android:id="@id/collapsingToolbar" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="@dimen/home_appbar_layout_height" app:contentScrim="?colorElevation" app:expandedTitleMarginStart="@dimen/spacing_16" app:layout_scrollFlags="scroll|exitUntilCollapsed" app:statusBarScrim="?colorElevation" app:title="@string/library">
+            <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin">
+                <LinearLayout android:layout_gravity="end" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/favoritesButton" android:background="?selectableItemBackgroundBorderless" android:padding="@dimen/spacing_16" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/library_favorites" app:srcCompat="@drawable/ic_favorites" app:tint="?colorContentPrimary" />
+                    <ImageView android:id="@id/highlightsButton" android:background="?selectableItemBackgroundBorderless" android:padding="@dimen/spacing_16" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/library_highlights" app:srcCompat="@drawable/ic_highlights" app:tint="?colorContentPrimary" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <com.blinkslabs.blinkist.android.uicore.widgets.DividerView android:id="@id/divider" style="@style/BigTitleUnderline" />
+            <View android:layout_gravity="bottom" android:id="@id/superSecretView" android:focusable="false" android:layout_width="170.0dip" android:layout_height="50.0dip" android:layout_marginBottom="@dimen/spacing_16" android:importantForAccessibility="no" android:layout_marginStart="@dimen/spacing_16" />
+        </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontCollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipeRefreshLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:tag="LibraryRecyclerView" android:paddingTop="@dimen/spacing_16" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/spacing_8" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="confirm_delete_items_plurals">
+        <item quantity="other">%d개의 항목을 삭제하시겠습니까?</item>
+    </plurals>
+    <plurals name="confirm_recyclebin_items_plurals">
+        <item quantity="other">%d개의 항목을 휴지통에 버리시겠습니까?</item>
+        <item quantity="one">%d개의 항목을 휴지통에 버리시겠습니까?</item>
+    </plurals>
+    <plurals name="msg_compressed_items_plurals">
+        <item quantity="other">%1$d개의 항목을 %2$s에 압축했습니다.</item>
+    </plurals>
+    <plurals name="msg_copied_items_plurals">
+        <item quantity="other">%1$d개의 항목을 %2$s로 복사했습니다.</item>
+    </plurals>
+    <plurals name="msg_deleted_items_plurals">
+        <item quantity="other">%1$d개의 항목을 삭제했습니다.</item>
+    </plurals>
+    <plurals name="msg_extracted_items_plurals">
+        <item quantity="other">%1$d개의 항목을 %2$s로 압축풀기했습니다.</item>
+    </plurals>
+    <plurals name="msg_moved_items_plurals">
+        <item quantity="other">%1$d개의 항목을 %2$s로 이동했습니다.</item>
+    </plurals>
+    <plurals name="msg_recycled_items_plurals">
+        <item quantity="other">%d개의 항목을 휴지통으로 이동했습니다</item>
+        <item quantity="one">%d개의 항목을 휴지통으로 이동했습니다</item>
+    </plurals>
+    <plurals name="msg_restored_items_plurals">
+        <item quantity="other">%d개의 항목을 휴지통에서 복원했습니다</item>
+        <item quantity="one">%d개의 항목을 휴지통에서 복원했습니다</item>
+    </plurals>
+    <plurals name="num_items_plurals">
+        <item quantity="other">%d개 항목</item>
+    </plurals>
+    <plurals name="selected_count">
+        <item quantity="other">%1$d개 선택됨</item>
+        <item quantity="one">%1$d개 선택됨</item>
+    </plurals>
+</resources>

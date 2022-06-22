@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/main_navigation_home_selector" android:id="@id/forYouFragmentCompose" android:title="@string/tab_name_for_you" />
+    <item android:icon="@drawable/main_navigation_explore_selector" android:id="@id/exploreFragment" android:title="@string/tab_name_explore" />
+    <item android:icon="@drawable/main_navigation_library_selector" android:id="@id/libraryGraph" android:title="@string/tab_name_library" />
+</menu>

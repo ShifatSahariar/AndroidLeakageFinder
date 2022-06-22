@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_category_account" android:key="@string/pref_account">
+        <androidx.preference.Preference android:title="@string/setting_account_title" android:key="@string/pref_account_settings" />
+        <androidx.preference.Preference android:title="@string/log_out" android:key="@string/pref_log_out_or_log_in" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_subscriptions" android:key="@string/pref_subscriptions">
+        <androidx.preference.Preference android:title="@string/setting_subscription_expiration" android:key="@string/pref_subscription_info_settings" />
+        <androidx.preference.Preference android:title="@string/audiobook_credits_settings_title" android:key="@string/pref_audiobook_credits" app:isPreferenceVisible="false" />
+        <androidx.preference.Preference android:title="@string/upgrade_now" android:key="@string/pref_subscription_action" />
+        <androidx.preference.Preference android:title="@string/restore_purchases" android:key="@string/pref_restore_purchases" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_category_content" android:key="@string/pref_content">
+        <androidx.preference.MultiSelectListPreference android:entries="@array/content_languages" android:title="@string/setting_language_title" android:key="@string/pref_select_languages" android:summary="@string/setting_language_summary" android:defaultValue="@array/empty_array" android:dialogTitle="@string/setting_language_title" android:entryValues="@array/content_languages_values" />
+        <androidx.preference.Preference android:title="@string/settings_sync_everything" android:key="@string/pref_sync_all" android:summary="@string/settings_sync_everything_summary" />
+        <androidx.preference.ListPreference android:entries="@array/settings_dark_mode_entries" android:title="@string/settings_dark_mode" android:key="@string/pref_dark_mode" android:defaultValue="@string/pref_dark_mode_system_value" android:dialogTitle="@string/settings_dark_mode" android:entryValues="@array/settings_dark_mode_entry_values" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_category_push_notifications" android:key="@string/pref_push_notifications">
+        <androidx.preference.Preference android:title="@string/setting_push_notifications_settings" android:key="@string/pref_push_notifications_settings" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_category_audio" android:key="@string/pref_audio">
+        <androidx.preference.CheckBoxPreference android:title="@string/setting_autoplay_recommendations_title" android:key="@string/pref_autoplay_recommendations" android:summary="@string/setting_autoplay_recommendations_summary" app:defaultValue="true" app:widgetLayout="@layout/pref_widget_checkbox" />
+        <androidx.preference.ListPreference android:entries="@array/empty_array" android:title="@string/setting_file_system_title" android:key="@string/pref_file_system" android:entryValues="@array/empty_array" />
+        <androidx.preference.CheckBoxPreference android:title="@string/setting_autodownload_audio_title" android:key="@string/pref_autodownload_audio" android:summary="@string/setting_autodownload_audio_summary" android:defaultValue="false" app:widgetLayout="@layout/pref_widget_checkbox" />
+        <androidx.preference.CheckBoxPreference android:title="@string/setting_download_on_cellular_title" android:key="@string/pref_download_on_cellular" android:defaultValue="false" app:singleLineTitle="false" app:widgetLayout="@layout/pref_widget_checkbox" />
+        <androidx.preference.CheckBoxPreference android:title="@string/setting_delete_audio_on_completion_title" android:key="@string/pref_delete_audio_on_completion" android:summary="@string/setting_delete_audio_on_completion_summary" android:defaultValue="true" app:widgetLayout="@layout/pref_widget_checkbox" />
+        <androidx.preference.Preference android:title="@string/setting_clear_audio_title" android:key="@string/pref_clear_audio" android:summary="@string/setting_clear_audio_summary" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_category_about">
+        <com.blinkslabs.blinkist.android.uicore.widgets.LinkPreference android:title="@string/setting_privacy_policy" app:href="@string/link_privacy_policy" />
+        <com.blinkslabs.blinkist.android.uicore.widgets.LinkPreference android:title="@string/setting_tos" app:href="@string/link_tos" />
+        <com.blinkslabs.blinkist.android.uicore.widgets.EmailUsPreference android:title="@string/pref_feedback" />
+        <com.blinkslabs.blinkist.android.uicore.widgets.LinkPreference android:title="@string/help_center" app:href="@string/link_help_center" />
+        <androidx.preference.Preference android:title="@string/rate_settings_title" android:key="@string/pref_rate_google_play" android:summary="@string/rate_settings_subtitle" />
+        <com.blinkslabs.blinkist.android.uicore.widgets.LinkPreference android:title="@string/follow_us_on_facebook" app:href="@string/link_facebook" />
+        <com.blinkslabs.blinkist.android.uicore.widgets.LinkPreference android:title="@string/follow_us_on_twitter" app:href="@string/link_twitter" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+    <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory android:title="@string/settings_category_misc">
+        <androidx.preference.Preference android:title="@string/settings_delete_account_title" android:key="@string/pref_delete_account" />
+        <androidx.preference.Preference android:title="@string/setting_version" android:key="@string/pref_version" />
+    </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontPreferenceCategory>
+</androidx.preference.PreferenceScreen>

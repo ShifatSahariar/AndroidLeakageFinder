@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:theme="@style/AudioPlayerTheme" android:background="@color/deep_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" android:id="@id/appBarLayout" android:background="@color/deep_black" android:focusableInTouchMode="true" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:titleTextAppearance="@style/ToolbarTitleBoldTextAppearance" />
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_16">
+            <TextView android:id="@id/totalTimeLeftLabelTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/audiobook_total_time_left" android:maxLines="1" android:layout_marginStart="@dimen/spacing_24" app:layout_constraintBaseline_toBaselineOf="@id/totalTimeLeftTextView" app:layout_constraintStart_toStartOf="parent" style="@style/T14LightGrey" />
+            <TextView android:ellipsize="end" android:id="@id/totalTimeLeftTextView" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_32" android:maxLines="1" android:layout_marginStart="@dimen/spacing_8" android:layout_marginEnd="@dimen/spacing_16" android:fontFeatureSettings="tnum,lnum" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/totalTimeLeftLabelTextView" app:layout_constraintTop_toTopOf="parent" style="@style/T16White" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

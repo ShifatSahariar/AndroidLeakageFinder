@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AuthActivityTheme" parent="@style/BaseAuthActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="PurchaseActivityTheme" parent="@style/BasePurchaseActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="RateItActivityTheme" parent="@style/BaseRateItActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="SimpleCampaignActivityTheme" parent="@style/BaseSimpleCampaignActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

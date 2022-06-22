@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="15.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/env_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/env_button_title" android:textAllCaps="false" />
+    <Button android:id="@id/device_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/device_button_title" android:textAllCaps="false" />
+    <Button android:id="@id/logs_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/logs_button_title" android:textAllCaps="false" />
+    <Button android:id="@id/file_issue_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/file_issue_button_title" android:textAllCaps="false" />
+</LinearLayout>

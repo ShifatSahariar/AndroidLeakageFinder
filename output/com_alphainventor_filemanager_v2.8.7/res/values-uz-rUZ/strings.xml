@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="failed">Tasvir yuklanmadi</string>
+    <string name="photo_view_count" formatted="false">%d tadan %dsi</string>
+    <string name="retry">Qayta urinish</string>
+    <string name="titles" formatted="false">%s, %s</string>
+</resources>

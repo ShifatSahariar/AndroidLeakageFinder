@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="layout" name="view_grouped_textmarkers_item">@layout/view_grouped_textmarkers_list_item</item>
+</resources>

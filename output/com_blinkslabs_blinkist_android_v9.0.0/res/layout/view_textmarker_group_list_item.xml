@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.blinkslabs.blinkist.android.feature.userlibrary.components.TextmarkerFromBookListItem android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?selectableItemBackground">
+        <View android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="20.0dip" />
+        <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginTop="8.0dip" android:importantForAccessibility="no" android:layout_marginStart="16.0dip" app:srcCompat="@drawable/ic_quote" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="32.0dip">
+            <TextView android:textSize="16.0sp" android:textColor="?colorContentSecondary" android:ellipsize="end" android:id="@id/txtTextMarker" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="16.0dip" android:maxLines="6" android:lineSpacingMultiplier="@dimen/linespacing" android:fontFamily="@font/tisa_pro_regular" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" />
+            <TextView android:id="@id/txtTimeElapsed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_below="@id/txtTextMarker" android:layout_marginStart="16.0dip" style="@style/P12" />
+            <ImageView android:id="@id/btnContextMenu" android:background="?selectableItemBackgroundBorderless" android:padding="12.0dip" android:focusable="true" android:clickable="true" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_below="@id/txtTextMarker" android:contentDescription="@string/accessibility_open_menu" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_overflow_black" app:tint="?colorContentPrimary" />
+            <View android:id="@id/separator" android:layout_marginTop="16.0dip" android:layout_below="@id/txtTimeElapsed" style="@style/GreyDivider" />
+        </RelativeLayout>
+    </FrameLayout>
+</com.blinkslabs.blinkist.android.feature.userlibrary.components.TextmarkerFromBookListItem>

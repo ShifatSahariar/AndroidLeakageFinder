@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/libraryGraph" app:startDestination="@id/libraryFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="LibraryFragment" android:name="com.blinkslabs.blinkist.android.feature.userlibrary.LibraryFragment" android:id="@id/libraryFragment">
+        <action android:id="@id/action_to_mixedLibraryPageFragment" app:destination="@id/mixedLibraryPageFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+        <action android:id="@id/action_to_userCollectionsLibraryFragment" app:destination="@id/userCollectionsLibraryFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+        <action android:id="@id/action_to_favoritesFragment" app:destination="@id/favoritesFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+        <action android:id="@id/action_to_audiobookLibraryFragment" app:destination="@id/audiobookLibraryFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+        <action android:id="@id/action_to_highlights" app:destination="@id/highlightsGraph" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment android:label="MixedLibraryPageFragment" android:name="com.blinkslabs.blinkist.android.feature.userlibrary.mixed.MixedLibraryPageFragment" android:id="@id/mixedLibraryPageFragment">
+        <argument android:name="libraryPage" app:argType="com.blinkslabs.blinkist.android.feature.userlibrary.mixed.LibraryPage" />
+    </fragment>
+    <fragment android:label="UserCollectionsLibraryFragment" android:name="com.blinkslabs.blinkist.android.feature.userlibrary.collections.UserCollectionsLibraryPageFragment" android:id="@id/userCollectionsLibraryFragment">
+        <action android:id="@id/action_to_mixedLibraryPageFragment" app:destination="@id/mixedLibraryPageFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment android:label="FavoritesFragment" android:name="com.blinkslabs.blinkist.android.feature.userlibrary.blinks.fragments.FavoritesFragment" android:id="@id/favoritesFragment" />
+    <fragment android:label="AudiobookLibraryFragment" android:name="com.blinkslabs.blinkist.android.feature.userlibrary.audiobook.AudiobookLibraryFragment" android:id="@id/audiobookLibraryFragment" />
+    <navigation android:id="@id/highlightsGraph" app:startDestination="@id/groupedTextmarkersFragment">
+        <fragment android:label="GroupedTextmarkersFragment" android:name="com.blinkslabs.blinkist.android.feature.userlibrary.textmarker.GroupedTextmarkersFragment" android:id="@id/groupedTextmarkersFragment">
+            <action android:id="@id/action_to_textMarkerOfBookFragment" app:destination="@id/textMarkerOfBookFragment" />
+        </fragment>
+        <fragment android:label="TextMarkerOfBookFragment" android:name="com.blinkslabs.blinkist.android.feature.textmarkers.TextmarkerOfBookFragment" android:id="@id/textMarkerOfBookFragment">
+            <argument android:name="bookId" app:argType="string" />
+        </fragment>
+    </navigation>
+</navigation>

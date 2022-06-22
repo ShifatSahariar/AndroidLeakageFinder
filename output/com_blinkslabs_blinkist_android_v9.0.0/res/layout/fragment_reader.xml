@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content" app:statusBarForeground="@null">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:tag="ReaderToolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:elevation="4.0dip" app:titleTextAppearance="@style/ToolbarTitleBoldTextAppearance">
+            <LinearLayout android:layout_gravity="end" android:orientation="horizontal" android:id="@id/toolbarRootReader" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <ImageButton android:id="@id/recommendButton" android:background="?actionBarItemBackground" android:visibility="gone" android:layout_width="@dimen/spacing_48" android:layout_height="?actionBarSize" android:contentDescription="@string/recommended" app:srcCompat="@drawable/ic_paper_plane" app:tint="?colorContentPrimary" />
+                <ImageButton android:id="@id/playButton" android:background="?actionBarItemBackground" android:layout_width="48.0dip" android:layout_height="?actionBarSize" android:scaleType="center" android:contentDescription="@string/accessibility_play" app:srcCompat="@drawable/ic_play_24" app:tint="?colorContentPrimary" />
+                <ImageButton android:id="@id/playerButton" android:background="?actionBarItemBackground" android:layout_width="48.0dip" android:layout_height="?actionBarSize" android:scaleType="center" android:contentDescription="@string/reader_action_player" app:srcCompat="@drawable/ic_play_audio" app:tint="?colorContentPrimary" />
+                <ImageButton android:id="@id/settingsButton" android:background="?actionBarItemBackground" android:layout_width="48.0dip" android:layout_height="?actionBarSize" android:scaleType="center" android:contentDescription="@string/reader_action_view_settings" app:srcCompat="@drawable/ic_aa" app:tint="?colorContentPrimary" />
+                <ImageButton android:id="@id/moreMenuButton" android:background="?actionBarItemBackground" android:layout_width="40.0dip" android:layout_height="?actionBarSize" android:scaleType="center" android:contentDescription="@string/overflow_contentdescription" android:paddingStart="5.0dip" android:paddingEnd="10.0dip" app:srcCompat="@drawable/ic_overflow_no_padding" app:tint="?colorContentPrimary" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout android:id="@id/contentLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.blinkslabs.blinkist.android.feature.reader.components.ReaderViewPager android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.blinkslabs.blinkist.android.feature.reader.components.ReaderPageIndicator android:layout_gravity="bottom" android:id="@id/pageIndicator" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <include android:id="@id/readerSettings" layout="@layout/view_reader_settings_inc" />
+    </FrameLayout>
+</LinearLayout>

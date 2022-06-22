@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="15.0sp" android:id="@id/issue_description" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/file_issue_hint" android:layout_above="@id/file_issue_warning" android:inputType="textMultiLine|textNoSuggestions" android:autofillHints="no" />
+    <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="?android:textColorPrimaryInverse" android:gravity="center" android:id="@id/file_issue_warning" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/file_issue_warning_text" android:layout_above="@id/issue_buttons" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/issue_buttons" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <Button android:textSize="15.0sp" android:id="@id/copy_issue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/copy_issue_text" android:textAllCaps="false" android:layout_marginEnd="10.0dip" style="?android:buttonBarButtonStyle" />
+        <Button android:textSize="15.0sp" android:id="@id/file_issue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/file_issue_button_title" android:textAllCaps="false" style="?android:buttonBarButtonStyle" />
+    </LinearLayout>
+</RelativeLayout>

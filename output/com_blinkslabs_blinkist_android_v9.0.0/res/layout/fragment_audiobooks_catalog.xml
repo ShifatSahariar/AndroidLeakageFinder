@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontCollapsingToolbarLayout android:id="@id/collapsingToolbar" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="@dimen/catalog_appbar_height" app:contentScrim="?colorElevation" app:expandedTitleMarginStart="@dimen/spacing_16" app:layout_scrollFlags="scroll|exitUntilCollapsed" app:statusBarScrim="?colorElevation" app:title="@string/audiobook_catalog_title">
+            <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:navigationIcon="@drawable/ic_arrow_back_24dp" />
+        </com.blinkslabs.blinkist.android.uicore.widgets.font.CustomFontCollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:tag="AudiobooksCatalogRecyclerView" android:paddingBottom="@dimen/spacing_16" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

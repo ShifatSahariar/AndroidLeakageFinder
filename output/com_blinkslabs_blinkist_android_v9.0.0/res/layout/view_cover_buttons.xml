@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="52.0dip" android:baselineAligned="false" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/btnStartReading" android:tag="btnStartReading" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_weight="1.0" android:elevation="3.0dip">
+        <FrameLayout android:theme="@style/WhiteRippleThemeOverlay" android:id="@id/btnStartReadingRipple" android:background="?selectableItemBackgroundBorderless" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" android:layout_marginEnd="@dimen/spacing_8" app:srcCompat="@drawable/ic_read" app:tint="@color/white" />
+            <TextView android:gravity="center" android:id="@id/startReadingTextView" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/read" style="@style/T16White" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@id/dividerContainer" android:background="@color/deep_black" android:layout_width="1.0dip" android:layout_height="48.0dip">
+        <View android:id="@id/divider" android:background="@color/dark_grey" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/btnStartPlaying" android:tag="btnStartPlaying" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_weight="1.0" android:elevation="3.0dip">
+        <FrameLayout android:theme="@style/WhiteRippleThemeOverlay" android:id="@id/btnStartPlayingRipple" android:background="?selectableItemBackgroundBorderless" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" android:layout_marginEnd="@dimen/spacing_8" app:srcCompat="@drawable/ic_play_audio" app:tint="@color/white" />
+            <TextView android:gravity="center" android:id="@id/startPlayingTextView" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/listen" style="@style/T16White" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@id/btnSubscribe" android:tag="btnSubscribe" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_weight="1.0" android:elevation="3.0dip">
+        <FrameLayout android:theme="@style/WhiteRippleThemeOverlay" android:id="@id/btnSubscribeRipple" android:background="?selectableItemBackgroundBorderless" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/midnight" android:gravity="center" android:id="@id/txtSubscribe" android:focusableInTouchMode="false" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/upgrade_cover_trial_unavailable" />
+    </FrameLayout>
+</LinearLayout>

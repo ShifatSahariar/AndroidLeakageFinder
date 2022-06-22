@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/coverDividerContainer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/coverDividerView" android:background="?colorContentPrimary" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</FrameLayout>

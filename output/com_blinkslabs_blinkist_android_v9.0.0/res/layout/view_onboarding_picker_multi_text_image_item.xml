@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/flex_interactive_onboarding_item_selector" android:padding="@dimen/spacing_16" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_4" android:layout_marginBottom="@dimen/spacing_4" android:foreground="?selectableItemBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/iconImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:id="@id/primaryTextView" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_8" android:layout_marginEnd="@dimen/spacing_8" app:layout_constraintBottom_toBottomOf="@id/iconImageView" app:layout_constraintEnd_toStartOf="@id/secondaryTextView" app:layout_constraintStart_toEndOf="@id/iconImageView" app:layout_constraintTop_toTopOf="@id/iconImageView" style="@style/T16Primary" />
+    <TextView android:id="@id/secondaryTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/iconImageView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/iconImageView" style="@style/T14Primary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/scrollView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_rewards" android:paddingTop="@dimen/spacing_64" android:paddingBottom="@dimen/spacing_48" android:layout_width="fill_parent" android:layout_height="375.0dip">
+            <TextView android:gravity="center_horizontal" android:id="@id/congratulatoryMessageTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_24" android:layout_marginRight="@dimen/spacing_24" android:maxLines="2" android:lineSpacingMultiplier="@dimen/linespacing" app:autoSizeMaxTextSize="28.0dip" app:autoSizeMinTextSize="18.0dip" app:autoSizeTextType="uniform" style="@style/T28" />
+            <RelativeLayout android:id="@id/bookCountViewGroup" android:layout_width="fill_parent" android:layout_height="88.0dip">
+                <TextView android:textSize="72.0dip" android:textColor="?colorContentPrimary" android:id="@id/bookCountTextViewNew" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:minLines="1" android:layout_centerInParent="true" android:fontFamily="@font/cera_pro_bold" android:fontFeatureSettings="tnum,lnum" />
+                <TextView android:textSize="72.0dip" android:textColor="?colorContentPrimary" android:id="@id/bookCountTextViewOld" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:minLines="1" android:layout_centerInParent="true" android:fontFamily="@font/cera_pro_bold" android:fontFeatureSettings="tnum,lnum" />
+            </RelativeLayout>
+            <TextView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/funFactMessageTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_24" android:layout_marginTop="@dimen/spacing_16" android:layout_marginRight="@dimen/spacing_24" android:maxLines="2" app:autoSizeMaxTextSize="22.0dip" app:autoSizeMinTextSize="16.0dip" app:autoSizeTextType="uniform" style="@style/R22" />
+        </LinearLayout>
+        <TextView android:id="@id/motivationalMessageTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_16" android:layout_marginTop="8.0dip" android:layout_marginRight="@dimen/spacing_16" style="@style/T20Primary" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recommendedRecyclerView" android:paddingLeft="@dimen/spacing_4" android:paddingRight="@dimen/spacing_4" android:paddingBottom="@dimen/spacing_16" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:layout_marginBottom="@dimen/spacing_16" />
+    </LinearLayout>
+</ScrollView>

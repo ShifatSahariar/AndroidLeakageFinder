@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="DropboxPrefs.xml" />
+    <include domain="sharedpref" path="GoogleDrivePrefs.xml" />
+    <include domain="sharedpref" path="OneDrivePrefs.xml" />
+    <include domain="sharedpref" path="SFTPPrefs.xml" />
+    <include domain="sharedpref" path="SFTPKeyPrefs.xml" />
+    <include domain="sharedpref" path="SMBPrefs.xml" />
+    <include domain="sharedpref" path="FTPPrefs.xml" />
+    <include domain="sharedpref" path="YandexDiskPrefs.xml" />
+    <include domain="sharedpref" path="WebDAVPrefs.xml" />
+    <include domain="sharedpref" path="BoxCloudPrefs.xml" />
+</full-backup-content>

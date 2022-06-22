@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.blinkslabs.blinkist.android.uicore.widgets.MaxWidthCardView android:id="@id/cardView" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_8" android:foreground="?selectableItemBackground" app:cardCornerRadius="@dimen/rounded_corner_radius" app:cardElevation="0.0dip" app:cardMaxWidth="@dimen/content_card_max_width" app:rippleColor="@color/light_grey"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.blinkslabs.blinkist.android.uicore.widgets.AspectRatioImageView android:id="@id/aspectRatioImageView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:adjustViewBounds="true" />
+</com.blinkslabs.blinkist.android.uicore.widgets.MaxWidthCardView>

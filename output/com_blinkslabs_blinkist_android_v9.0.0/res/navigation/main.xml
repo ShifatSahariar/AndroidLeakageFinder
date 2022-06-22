@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/mainNavigation" app:startDestination="@id/forYouFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="ForYouFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.foryou.ForYouFragment" android:id="@id/forYouFragment" />
+    <fragment android:label="ForYouFragmentCompose" android:name="com.blinkslabs.blinkist.android.feature.discover.foryou.ForYouFragmentCompose" android:id="@id/forYouFragmentCompose" />
+    <fragment android:label="ExploreFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.explore.ExploreFragment" android:id="@id/exploreFragment" />
+    <fragment android:label="ConnectFragment" android:name="com.blinkslabs.blinkist.android.feature.connect.ConnectFragment" android:id="@id/connectFragment" />
+    <include app:graph="@navigation/library" />
+    <fragment android:label="SearchFragment" android:name="com.blinkslabs.blinkist.android.feature.search.SearchContainerFragment" android:id="@id/searchFragment">
+        <argument android:name="startWithAudiobooks" app:argType="boolean" />
+    </fragment>
+    <action android:id="@id/action_global_to_searchFragment" app:destination="@id/searchFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="FlexMixedContentListFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.mixed.carousel.more.FlexMixedContentListFragment" android:id="@id/flexMixedContentListFragment">
+        <argument android:name="mixedDataSource" app:argType="com.blinkslabs.blinkist.android.feature.discover.mixed.carousel.MixedDataSource" />
+    </fragment>
+    <action android:id="@id/action_global_to_flexMixedContentListFragment" app:destination="@id/flexMixedContentListFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="CuratedListDetailFragment" android:name="com.blinkslabs.blinkist.android.feature.curatedlists.detail.CuratedListDetailFragment" android:id="@id/curatedListDetailFragment">
+        <argument android:name="destination" app:argType="com.blinkslabs.blinkist.android.feature.curatedlists.detail.CuratedListDestination" />
+    </fragment>
+    <action android:id="@id/action_global_to_curatedListDetailFragment" app:destination="@id/curatedListDetailFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="CuratedListsFragment" android:name="com.blinkslabs.blinkist.android.feature.curatedlists.list.CuratedListsFragment" android:id="@id/curatedListsFragment">
+        <argument android:name="trackingAttributes" app:argType="com.blinkslabs.blinkist.android.model.TrackingAttributes" />
+    </fragment>
+    <action android:id="@id/action_global_to_curatedListsFragment" app:destination="@id/curatedListsFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="CuratedListsMoreScreenFragment" android:name="com.blinkslabs.blinkist.android.feature.curatedlists.list.CuratedListsMoreScreenFragment" android:id="@id/curatedListsMoreScreenFragment">
+        <argument android:name="trackingAttributes" app:argType="com.blinkslabs.blinkist.android.model.TrackingAttributes" />
+        <argument android:name="carouselAttributes" app:argType="com.blinkslabs.blinkist.android.model.flex.discover.FlexCuratedListsCarouselAttributes" />
+    </fragment>
+    <action android:id="@id/action_global_to_curatedListsMoreScreenFragment" app:destination="@id/curatedListsMoreScreenFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="CategoryDetailFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.categories.detail.CategoryDetailFragment" android:id="@id/categoryDetailFragment">
+        <argument android:name="categoryId" app:argType="string" />
+    </fragment>
+    <action android:id="@id/action_global_to_categoryDetailFragment" app:destination="@id/categoryDetailFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="CategoryFlexSectionMoreFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.flex.more.CategoryFlexSectionMoreFragment" android:id="@id/categoryFlexSectionMoreFragment">
+        <argument android:name="categoryScreenSection" app:argType="com.blinkslabs.blinkist.android.feature.discover.categories.detail.CategoryScreenSection" />
+    </fragment>
+    <action android:id="@id/action_global_to_categoryFlexSectionMoreFragment" app:destination="@id/categoryFlexSectionMoreFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="TopicDetailFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.topics.TopicDetailFragment" android:id="@id/topicDetailFragment">
+        <argument android:name="topic" app:argType="com.blinkslabs.blinkist.android.model.Topic" />
+    </fragment>
+    <action android:id="@id/action_global_to_topicDetailFragment" app:destination="@id/topicDetailFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="ShortcastsHomeFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.shortcasts.home.ShortcastsHomeFragment" android:id="@id/shortcastsHomeFragment" />
+    <action android:id="@id/action_global_to_shortcastsHomeFragment" app:destination="@id/shortcastsHomeFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="ShortcastCatalogFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.shortcasts.catalog.more.ShortcastCatalogFragment" android:id="@id/shortcastCatalogFragment">
+        <argument android:name="trackingAttributes" app:argType="com.blinkslabs.blinkist.android.model.TrackingAttributes" />
+    </fragment>
+    <action android:id="@id/action_global_to_shortcastCatalogFragment" app:destination="@id/shortcastCatalogFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="BlinksHomeFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.blinkshub.BlinksHomeFragment" android:id="@id/blinksHomeFragment" />
+    <action android:id="@id/action_global_to_blinksHomeFragment" app:destination="@id/blinksHomeFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="AudiobooksCatalogFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.audiobooks.catalog.AudiobooksCatalogFragment" android:id="@id/audiobooksCatalogFragment" />
+    <action android:id="@id/action_global_to_audiobooksCatalogFragment" app:destination="@id/audiobooksCatalogFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="BookCoverFragment" android:name="com.blinkslabs.blinkist.android.feature.reader.fragments.CoverFragment" android:id="@id/bookCoverFragment">
+        <argument android:name="annotatedBook" app:argType="com.blinkslabs.blinkist.android.model.AnnotatedBook" />
+        <argument android:name="mediaOrigin" app:argType="com.blinkslabs.blinkist.android.feature.audio.v2.MediaOrigin" />
+    </fragment>
+    <action android:id="@id/action_global_to_bookCoverFragment" app:destination="@id/bookCoverFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="ShowCoverFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.show.ShowCoverFragment" android:id="@id/showCoverFragment">
+        <argument android:name="destination" app:argType="com.blinkslabs.blinkist.android.feature.discover.show.ShowCoverDestination" />
+        <argument android:name="openPlayer" app:argType="boolean" />
+    </fragment>
+    <action android:id="@id/action_global_to_showCoverFragment" app:destination="@id/showCoverFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <action android:id="@id/action_global_to_showCoverFragmentWithEpisode" app:destination="@id/showCoverFragment">
+        <argument android:name="episodeId" app:argType="com.blinkslabs.blinkist.android.model.EpisodeId" />
+    </action>
+    <fragment android:label="EpisodeCoverFragment" android:name="com.blinkslabs.blinkist.android.feature.discover.show.episodecover.EpisodeCoverFragment" android:id="@id/episodeCoverFragment">
+        <argument android:name="episodeId" app:argType="com.blinkslabs.blinkist.android.model.EpisodeId" />
+        <argument android:name="mediaOrigin" app:argType="com.blinkslabs.blinkist.android.feature.audio.v2.MediaOrigin" />
+    </fragment>
+    <action android:id="@id/action_global_to_episodeCoverFragment" app:destination="@id/episodeCoverFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="AudiobookCoverFragment" android:name="com.blinkslabs.blinkist.android.feature.audiobook.AudiobookCoverFragment" android:id="@id/audiobookCoverFragment">
+        <argument android:name="audiobookId" app:argType="com.blinkslabs.blinkist.android.model.AudiobookId" />
+    </fragment>
+    <action android:id="@id/action_global_to_audiobookCoverFragment" app:destination="@id/audiobookCoverFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="FinishBookFragment" android:name="com.blinkslabs.blinkist.android.feature.finish.fragments.FinishBookFragment" android:id="@id/finishBookFragment">
+        <argument android:name="book" app:argType="com.blinkslabs.blinkist.android.model.Book" />
+        <argument android:name="wasAlreadyFinished" app:argType="boolean" />
+    </fragment>
+    <action android:id="@id/action_global_to_finishBookFragment" app:destination="@id/finishBookFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="StatisticsFragment" android:name="com.blinkslabs.blinkist.android.feature.statistics.StatisticsFragment" android:id="@id/statisticsFragment" />
+    <action android:id="@id/action_global_to_statisticsFragment" app:destination="@id/statisticsFragment" />
+    <fragment android:label="WebFragment" android:name="com.blinkslabs.blinkist.android.feature.web.WebFragment" android:id="@id/webFragment">
+        <argument android:name="uri" app:argType="android.net.Uri" />
+        <argument android:name="isRateDestinationWebView" app:argType="boolean" />
+    </fragment>
+    <action android:id="@id/action_global_to_webFragment" app:destination="@id/webFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="PersonalityDetailFragment" android:name="com.blinkslabs.blinkist.android.feature.personalities.PersonalityDetailFragment" android:id="@id/personalityDetailFragment">
+        <argument android:name="personalitySlugOrUuid" app:argType="com.blinkslabs.blinkist.android.model.PersonalitySlugOrUuid" />
+    </fragment>
+    <action android:id="@id/action_global_to_personality_detail" app:destination="@id/personalityDetailFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="CourseFragment" android:name="com.blinkslabs.blinkist.android.feature.courses.CourseFragment" android:id="@id/courseFragment">
+        <argument android:name="courseSlug" app:argType="com.blinkslabs.blinkist.android.model.CourseSlug" />
+    </fragment>
+    <action android:id="@id/action_global_to_course" app:destination="@id/courseFragment" app:enterAnim="@anim/fragment_fade_enter" app:exitAnim="@anim/fragment_fade_exit" app:popEnterAnim="@anim/fragment_fade_enter" app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment android:label="ConnectAddNameFragment" android:name="com.blinkslabs.blinkist.android.feature.connect.share.ConnectAddNameFragment" android:id="@id/connectAddNameFragment">
+        <argument android:name="fromPendingState" app:argType="boolean" />
+    </fragment>
+    <action android:id="@id/action_global_to_connect_add_name" app:destination="@id/connectAddNameFragment" app:enterAnim="@anim/fragment_slide_in_bottom" app:exitAnim="@anim/fragment_fade_exit_slower" app:popEnterAnim="@anim/fragment_slide_in_bottom" app:popExitAnim="@anim/fragment_fade_exit_slower" />
+    <fragment android:label="ConnectShareInviteFragment" android:name="com.blinkslabs.blinkist.android.feature.connect.share.ConnectShareInviteFragment" android:id="@id/connectShareInviteFragment" />
+    <action android:id="@id/action_global_to_connect_share_invite" app:destination="@id/connectShareInviteFragment" app:enterAnim="@anim/fragment_slide_in_bottom" app:exitAnim="@anim/fragment_fade_exit_slower" app:popEnterAnim="@anim/fragment_slide_in_bottom" app:popExitAnim="@anim/fragment_fade_exit_slower" />
+</navigation>

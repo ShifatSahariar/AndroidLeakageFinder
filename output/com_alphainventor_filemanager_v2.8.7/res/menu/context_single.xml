@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/menu_rename" android:title="@string/menu_rename" />
+    <item android:id="@id/menu_bookmark" android:title="@string/menu_add_bookmark" />
+    <item android:id="@id/menu_compress" android:title="@string/menu_compress" />
+    <item android:id="@id/menu_extract" android:title="@string/menu_extract" />
+    <item android:id="@id/menu_properties" android:title="@string/menu_properties" />
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/dev_menu_nav_graph" app:startDestination="@id/main_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/menu_title" android:name="com.amplifyframework.devmenu.DevMenuMainFragment" android:id="@id/main_fragment">
+        <action android:id="@id/show_file_issue" app:destination="@id/file_issue_fragment" />
+        <action android:id="@id/show_env_info" app:destination="@id/environment_fragment" />
+        <action android:id="@id/show_device_info" app:destination="@id/device_fragment" />
+        <action android:id="@id/show_logs" app:destination="@id/logs_fragment" />
+    </fragment>
+    <fragment android:label="@string/env_view_title" android:name="com.amplifyframework.devmenu.DevMenuEnvironmentFragment" android:id="@id/environment_fragment" />
+    <fragment android:label="@string/device_view_title" android:name="com.amplifyframework.devmenu.DevMenuDeviceFragment" android:id="@id/device_fragment" />
+    <fragment android:label="@string/logs_view_title" android:name="com.amplifyframework.devmenu.DevMenuLogsFragment" android:id="@id/logs_fragment" />
+    <fragment android:label="@string/file_issue_view_title" android:name="com.amplifyframework.devmenu.DevMenuFileIssueFragment" android:id="@id/file_issue_fragment" />
+</navigation>

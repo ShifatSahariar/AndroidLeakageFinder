@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="abbrev_num_days_ago">
+        <item quantity="other">vor %d Tagen</item>
+        <item quantity="one">gestern</item>
+    </plurals>
+    <plurals name="abbrev_num_hours_ago">
+        <item quantity="other">vor %d Stunden</item>
+        <item quantity="one">vor 1 Stunde</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">vor %d Minuten</item>
+        <item quantity="one">vor 1 Minute</item>
+    </plurals>
+    <plurals name="activity_user_profile_books_favored">
+        <item quantity="other">%d Favoriten</item>
+        <item quantity="one">%d Favorit</item>
+    </plurals>
+    <plurals name="activity_user_profile_highlights_done">
+        <item quantity="other">%d Markierungen</item>
+        <item quantity="one">%d Markierungen</item>
+    </plurals>
+    <plurals name="audiobook_cover_credits_confirmation_message">
+        <item quantity="other">Danach wird dein Guthaben für %d weitere Hörbücher reichen</item>
+        <item quantity="one">Danach wird dein Guthaben für ein weiteres Hörbuch reichen</item>
+    </plurals>
+    <plurals name="audiobook_cover_number_of_chapters">
+        <item quantity="other">%d Kapitel</item>
+        <item quantity="one">%d Kapitel</item>
+    </plurals>
+    <plurals name="audiobook_credits_expiration_settings_detail">
+        <item quantity="other">%1$d verfallen am %2$s</item>
+        <item quantity="one">%1$d verfällt am %2$s</item>
+    </plurals>
+    <plurals name="audiobook_credits_settings_detail">
+        <item quantity="other">%d Guthaben</item>
+        <item quantity="one">%d Guthaben</item>
+    </plurals>
+    <plurals name="books">
+        <item quantity="other">%d Titel</item>
+        <item quantity="one">%d Titel</item>
+    </plurals>
+    <plurals name="collections.count">
+        <item quantity="other">%d Listen</item>
+        <item quantity="one">%d Liste</item>
+    </plurals>
+    <plurals name="discover_curated_lists_blinks_count">
+        <item quantity="other">%d Blinks</item>
+        <item quantity="one">%d Blinks</item>
+    </plurals>
+    <plurals name="discover_curated_lists_episodes_count">
+        <item quantity="other">%d Folgen</item>
+        <item quantity="one">%d Folge</item>
+    </plurals>
+    <plurals name="discover_stage_element_topic_books_left">
+        <item quantity="other">Noch %s Bücher</item>
+        <item quantity="one">Noch ein Buch</item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">%d Sekunden vorspulen</item>
+        <item quantity="one">%d Sekunde vorspulen</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">%d Sekunden zurückspulen</item>
+        <item quantity="one">%d Sekunde zurückspulen</item>
+    </plurals>
+    <plurals name="hour">
+        <item quantity="other">%d Stunden</item>
+        <item quantity="one">1 Stunde</item>
+    </plurals>
+    <plurals name="item_count">
+        <item quantity="other">%d Titel</item>
+        <item quantity="one">1 Titel</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="other">%d Minuten</item>
+        <item quantity="one">1 Minute</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d neue Benachrichtigungen</item>
+        <item quantity="one">%d neue Benachrichtigung</item>
+    </plurals>
+    <plurals name="number_of_episodes">
+        <item quantity="other">%d Folgen</item>
+        <item quantity="one">1 Folge</item>
+    </plurals>
+    <plurals name="second">
+        <item quantity="other">%d Sekunden</item>
+        <item quantity="one">1 Sekunde</item>
+    </plurals>
+    <plurals name="settings_multi_user_plan_invites_available_description">
+        <item quantity="other">Dein Premium-Abo hat %d weiteren, separaten Account. Teile einfach den Einladungslink, um jemanden deiner Lieben einzuladen.</item>
+        <item quantity="one">Dein Premium-Abo hat %d weiteren, separaten Account. Teile einfach den Einladungslink, um jemanden deiner Lieben einzuladen.</item>
+    </plurals>
+    <plurals name="settings_multi_user_plan_invites_available_title">
+        <item quantity="other">Lade jemanden zu Premium ein</item>
+        <item quantity="one">Lade jemanden zu Premium ein</item>
+    </plurals>
+    <plurals name="settings_multi_user_plan_invites_not_available_description">
+        <item quantity="other">Deine %d zusätzlichen Premium-Einladungen wurden bereits verwendet. Wende dich an den Kundenservice, wenn du Änderungen vornehmen willst.</item>
+        <item quantity="one">Dein zusätzlicher Account wurde bereits als Einladung verschickt. Wende dich an den Kundenservice, wenn du Änderungen vornehmen willst.</item>
+    </plurals>
+    <plurals name="settings_multi_user_plan_invites_not_available_title">
+        <item quantity="other">Keine Einladung möglich</item>
+        <item quantity="one">Keine Einladung möglich</item>
+    </plurals>
+    <plurals name="show_audio_duration">
+        <item quantity="other">%d Min.</item>
+        <item quantity="one">%d Min.</item>
+    </plurals>
+    <plurals name="show_audio_duration_left">
+        <item quantity="other">%d Min. verbleibend</item>
+        <item quantity="one">%d Min. verbleibend</item>
+    </plurals>
+</resources>

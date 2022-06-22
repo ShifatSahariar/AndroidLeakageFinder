@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SearchView android:textSize="15.0sp" android:id="@id/search_logs_field" android:paddingLeft="-55.0dip" android:paddingRight="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/filter_logs" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:inputType="textNoSuggestions" android:iconifiedByDefault="false" android:queryHint="@string/search_logs_hint" android:paddingStart="-55.0dip" android:paddingEnd="0.0dip" android:layout_toStartOf="@id/filter_logs" android:layout_alignParentStart="true" />
+    <Button android:id="@id/filter_logs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/log_level_filter" android:layout_alignParentRight="true" android:layout_marginStart="5.0dip" android:layout_alignParentEnd="true" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_below="@id/search_logs_field">
+        <HorizontalScrollView android:fadingEdgeLength="70.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:requiresFadingEdge="horizontal">
+            <TextView android:textSize="15.0sp" android:textColor="?android:textColorPrimaryInverse" android:id="@id/logs_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/placeholder_logs" android:lineSpacingExtra="3.0dip" />
+        </HorizontalScrollView>
+    </ScrollView>
+</RelativeLayout>

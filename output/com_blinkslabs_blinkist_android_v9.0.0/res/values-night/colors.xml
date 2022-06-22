@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAttrBackground">@color/deep_black</color>
+    <color name="colorAttrContentPrimary">@color/white</color>
+    <color name="colorAudiobookFormatLabelBackground">@color/raspberry_1</color>
+    <color name="colorBlinkistConnectTooltipTitleForegroundColor">@color/raspberry</color>
+    <color name="colorBlinksFormatLabelBackground">@color/blinkist_green_1</color>
+    <color name="colorCollectionFormatLabelBackground">@color/blinkist_blue_1</color>
+    <color name="colorEpisodeFormatLabelBackground">@color/orchid_violet_1</color>
+    <color name="colorMarkBackground">@color/deep_black</color>
+    <color name="colorShortcastFormatLabelBackground">@color/orchid_violet_1</color>
+    <color name="com_braze_content_card_background">#ff555555</color>
+    <color name="com_braze_content_card_background_border">#ff555555</color>
+    <color name="com_braze_content_card_background_shadow">#ff555555</color>
+    <color name="com_braze_content_card_empty_text_color">@android:color/white</color>
+    <color name="com_braze_content_cards_action_hint_text_color">#ff8ac7ff</color>
+    <color name="com_braze_content_cards_description">@android:color/white</color>
+    <color name="com_braze_content_cards_display_background_color">#ff1e1e1e</color>
+    <color name="com_braze_content_cards_title">@android:color/white</color>
+    <color name="com_braze_content_cards_unread_bar_color">#ff8ac7ff</color>
+    <color name="mdtp_accent_color_focused">@color/alpha_33_deep_black</color>
+    <color name="mdtp_ampm_text_color">@color/midnight</color>
+    <color name="mdtp_background_color">@color/midnight</color>
+    <color name="mdtp_circle_background">@color/midnight</color>
+    <color name="mdtp_circle_color">@color/midnight_3</color>
+    <color name="mdtp_date_picker_text_disabled">@color/alpha_33_white</color>
+    <color name="mdtp_display_numbers_text_color">@color/midnight</color>
+    <color name="mdtp_numbers_text_color">@color/white</color>
+    <color name="mdtp_white">@color/midnight</color>
+    <color name="multi_user_plan_value_proposition_header_background">@color/midnight</color>
+    <color name="onboarding_tinder_completed_card_background">@color/midnight</color>
+    <color name="referral_sharing_card_background">@color/midnight</color>
+</resources>

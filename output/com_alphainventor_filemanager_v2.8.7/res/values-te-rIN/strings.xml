@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="failed">చిత్రాన్ని లోడ్ చేయడం కుదరలేదు</string>
+    <string name="photo_view_count" formatted="false">%dలో %d</string>
+    <string name="retry">మళ్లీ ప్రయత్నించండి</string>
+    <string name="titles" formatted="false">%s, %s</string>
+</resources>
