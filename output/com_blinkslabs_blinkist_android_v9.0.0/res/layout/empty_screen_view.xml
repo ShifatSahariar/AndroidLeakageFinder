@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="end" android:id="@id/titleTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_4" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" style="@style/T16Primary" />
-    <TextView android:ellipsize="end" android:gravity="center" android:id="@id/messageTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_8" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" style="@style/P14" />
-    <TextView android:ellipsize="end" android:id="@id/ctaTextView" android:background="?selectableItemBackground" android:paddingTop="@dimen/spacing_16" android:paddingBottom="@dimen/spacing_16" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="@dimen/spacing_24" android:layout_marginEnd="@dimen/spacing_24" style="@style/L16ContentAccent" />
-    <Button android:id="@id/upgradeButton" android:visibility="gone" android:layout_width="328.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:text="@string/empty_view_upgrade_subscription_basic_user" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" style="@style/GreenButtonWidget" />
-</merge>

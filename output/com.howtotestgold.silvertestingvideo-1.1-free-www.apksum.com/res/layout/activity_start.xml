@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/back" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:ads="http://schemas.android.com/apk/res-auto">
-    <TextView android:textSize="40.0dip" android:textStyle="bold" android:textColor="@color/back1" android:layout_gravity="center" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="@string/app_name" />
-    <Button android:textColor="#fffdfcfc" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/start2" android:background="@drawable/start1" android:layout_width="wrap_content" android:layout_height="205.0dip" android:layout_marginTop="60.0dip" />
-    <com.google.android.gms.ads.AdView android:id="@id/adView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" ads:adSize="SMART_BANNER" ads:adUnitId="@string/banner_ad_unit_id" />
-</LinearLayout>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="failed">Ekki var hægt að hlaða mynd</string>
-    <string name="photo_view_count" formatted="false">%d af %d</string>
-    <string name="retry">Reyna aftur</string>
-    <string name="titles" formatted="false">%s, %s</string>
-</resources>

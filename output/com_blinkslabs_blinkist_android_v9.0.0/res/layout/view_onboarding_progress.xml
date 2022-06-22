@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.progressindicator.LinearProgressIndicator android:id="@id/progressIndicator" android:paddingTop="@dimen/spacing_8" android:paddingBottom="@dimen/spacing_8" android:layout_width="0.0dip" android:layout_height="wrap_content" android:paddingStart="0.0dip" android:paddingEnd="0.0dip" app:indicatorColor="@color/blinkist_green" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintWidth_max="@dimen/audio_player_max_width" app:trackColor="@color/light_grey" app:trackCornerRadius="4.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

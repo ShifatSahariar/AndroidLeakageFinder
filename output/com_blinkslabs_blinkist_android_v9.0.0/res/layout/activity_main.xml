@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinatorLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.fragment.app.FragmentContainerView android:name="androidx.navigation.fragment.NavHostFragment" android:id="@id/navHostFragmentView" android:layout_width="fill_parent" android:layout_height="fill_parent" app:defaultNavHost="true" />
-    <androidx.fragment.app.FragmentContainerView android:id="@id/resumeBarFragment" android:layout_width="fill_parent" android:layout_height="fill_parent" app:behavior_hideable="false" app:behavior_peekHeight="0.0dip" app:behavior_saveFlags="all" app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
-    <com.google.android.material.bottomnavigation.BottomNavigationView android:layout_gravity="bottom" android:id="@id/bottomNavigationView" android:background="?colorBottomBar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:itemIconTint="@color/bottom_navigation_item" app:itemRippleColor="@color/mid_grey" app:itemTextColor="@color/bottom_navigation_item" app:labelVisibilityMode="labeled" />
-    <nl.dionsegijn.konfetti.xml.KonfettiView android:id="@id/konfettiView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>

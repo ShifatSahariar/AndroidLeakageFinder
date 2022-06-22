@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:padding="@dimen/spacing_24" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView android:id="@id/iconImageView" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <TextView android:id="@id/titleTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_32" android:textAlignment="center" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/iconImageView" style="@style/T22" />
-    <TextView android:id="@id/descriptionTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:textAlignment="center" app:layout_constraintTop_toBottomOf="@id/titleTextView" style="@style/P16" />
-    <Button android:id="@id/dismissButton" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_24" android:text="@string/delete_account_dialog_button" app:layout_constraintTop_toBottomOf="@id/descriptionTextView" style="@style/GreenButtonWidget" />
-</androidx.constraintlayout.widget.ConstraintLayout>

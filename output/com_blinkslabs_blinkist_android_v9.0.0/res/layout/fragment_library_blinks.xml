@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include android:id="@id/collapsingToolbarLayout" layout="@layout/view_collapsing_toolbar" />
-    <com.blinkslabs.blinkist.android.uicore.widgets.BlinkistSwipeRefreshLayout android:id="@id/ptrLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/recyclerView" android:tag="FavoritesRecyclerView" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </com.blinkslabs.blinkist.android.uicore.widgets.BlinkistSwipeRefreshLayout>
-    <com.blinkslabs.blinkist.android.uicore.widgets.EmptyScreenView android:gravity="center" android:id="@id/emptyView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" app:image="@drawable/ic_no_books" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>

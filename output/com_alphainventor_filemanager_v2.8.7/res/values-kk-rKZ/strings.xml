@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="failed">Бейнені жүктей алмады</string>
-    <string name="photo_view_count" formatted="false">%d, барлығы %d</string>
-    <string name="retry">Қайта әрекеттену</string>
-    <string name="titles" formatted="false">%s, %s</string>
-</resources>

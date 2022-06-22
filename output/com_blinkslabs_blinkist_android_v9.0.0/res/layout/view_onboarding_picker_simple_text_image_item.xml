@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/flex_interactive_onboarding_item_selector" android:padding="@dimen/spacing_16" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_4" android:layout_marginBottom="@dimen/spacing_4" android:foreground="?selectableItemBackground"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView android:id="@id/primaryTextView" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_8" android:layout_marginEnd="@dimen/spacing_16" app:layout_constraintBottom_toBottomOf="@id/iconImageView" app:layout_constraintEnd_toStartOf="@id/iconImageView" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/iconImageView" style="@style/T16Primary" />
-    <ImageView android:id="@id/iconImageView" android:layout_width="100.0dip" android:layout_height="100.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>

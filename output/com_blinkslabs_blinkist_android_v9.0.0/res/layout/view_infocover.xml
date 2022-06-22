@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="end" android:id="@id/titleTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/T14Secondary" />
-    <TextView android:ellipsize="end" android:gravity="end" android:id="@id/contentTextView" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="@dimen/spacing_16" style="@style/T16Primary" />
-</merge>

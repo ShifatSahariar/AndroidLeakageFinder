@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:id="@id/rootView" android:background="@color/deep_black" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView android:id="@id/iconImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginTop="@dimen/spacing_24" android:layout_marginBottom="@dimen/spacing_24" android:layout_marginStart="@dimen/spacing_16" app:srcCompat="@drawable/ic_error_white_24dp" app:tint="@color/white" />
-    <TextView android:layout_gravity="center_vertical" android:id="@id/messageTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:layout_marginBottom="@dimen/spacing_16" android:lineSpacingExtra="4.0sp" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_16" android:fontFeatureSettings="tnum, lnum" style="@style/P14LightestGrey" />
-</LinearLayout>

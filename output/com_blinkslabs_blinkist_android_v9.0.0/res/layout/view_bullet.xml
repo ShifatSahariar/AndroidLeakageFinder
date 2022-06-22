@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/bulletImageView" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginBottom="@dimen/spacing_16" android:src="@drawable/ic_check_16dp" android:layout_marginStart="@dimen/spacing_16" android:layout_marginEnd="@dimen/spacing_8" />
-    <TextView android:gravity="start" android:id="@id/bulletTextView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/spacing_16" android:layout_marginStart="@dimen/spacing_48" style="@style/P16" />
-</merge>

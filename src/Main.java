@@ -35,11 +35,15 @@ public class Main {
         for(int i=0; i<listOfInputFiles.size(); i++) {
             String fileName = listOfInputFiles.get(i);
 
+
             decoder.setOutDir(new File("./output/"+fileName.substring(0,fileName.length()-4)));
-            decoder.setApkFile(new File("input/"+fileName));
+
             decoder.setForceDelete(true);
+            decoder.setApkFile(new File("input/"+fileName));
+            decoder.setDecodeResources((short)256);
+
             decoder.setDecodeSources((short)1);
-            decoder.hasResources();
+
             decoder.decode();
            // System.out.println(fileName);
 

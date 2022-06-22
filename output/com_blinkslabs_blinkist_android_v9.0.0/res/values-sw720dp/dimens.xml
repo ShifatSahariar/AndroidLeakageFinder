@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="activity_horizontal_margin">64.0dip</dimen>
-    <item type="dimen" name="mr_dialog_fixed_width_major">50.0%</item>
-    <item type="dimen" name="mr_dialog_fixed_width_minor">70.00001%</item>
-    <dimen name="onboarding_fluent_max_width">640.0dip</dimen>
-    <dimen name="spacing_episode_subheader">24.0dip</dimen>
-</resources>

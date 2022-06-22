@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/bottom_menu_layout" android:background="@drawable/bg_bottombar" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:focusable="false" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/desktop_ad_height"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:orientation="horizontal" android:id="@id/bottom_menu_container" android:descendantFocusability="afterDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" />
-    <View android:id="@id/more_anchor" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
-</RelativeLayout>

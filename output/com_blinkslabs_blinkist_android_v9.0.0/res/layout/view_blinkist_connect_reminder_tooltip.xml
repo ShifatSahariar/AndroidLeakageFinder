@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:background="?colorContentSecondary" android:paddingLeft="@dimen/spacing_16" android:paddingTop="@dimen/spacing_24" android:paddingRight="@dimen/spacing_16" android:paddingBottom="@dimen/spacing_24" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingHorizontal="@dimen/spacing_16" android:paddingVertical="@dimen/spacing_24"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView android:textColor="@color/colorBlinkistConnectTooltipTitleForegroundColor" android:id="@id/tooltipTitleTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/connect_tooltip_reminder_title" android:textAllCaps="true" app:layout_constraintTop_toTopOf="parent" style="@style/T12" />
-    <TextView android:textColor="?colorBackground" android:id="@id/tooltipDescriptionTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_4" android:text="@string/connect_tooltip_reminder_description" app:layout_constraintTop_toBottomOf="@id/tooltipTitleTextView" style="@style/T14Primary" />
-</androidx.constraintlayout.widget.ConstraintLayout>

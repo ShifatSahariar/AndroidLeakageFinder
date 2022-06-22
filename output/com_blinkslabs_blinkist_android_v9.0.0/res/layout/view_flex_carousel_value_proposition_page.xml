@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/pageRoot" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.blinkslabs.blinkist.android.uicore.widgets.FlexOnboardingValuePropositionView android:id="@id/valuePropositionView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</FrameLayout>

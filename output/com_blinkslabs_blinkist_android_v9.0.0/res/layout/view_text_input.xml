@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView android:id="@id/titleTextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_16" android:layout_marginBottom="@dimen/spacing_8" style="@style/T16Primary" />
-    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInput" android:layout_width="fill_parent" android:layout_height="wrap_content" app:endIconTint="?colorContentPlaceholder">
-        <com.google.android.material.textfield.TextInputEditText android:id="@id/editText" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-</merge>

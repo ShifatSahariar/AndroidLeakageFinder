@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.google.android.material.tabs.TabLayout android:id="@id/tab_layout" android:background="@drawable/bg_tablayout_dialog" android:layout_width="fill_parent" android:layout_height="wrap_content" app:tabGravity="fill" app:tabIconTint="@color/dialog_tab_text" app:tabIndicatorHeight="4.0dip" app:tabMinWidth="100.0dip" app:tabMode="fixed" app:tabTextColor="@color/dialog_tab_text" />
-    <androidx.viewpager.widget.ViewPager android:id="@id/view_pager" android:layout_width="fill_parent" android:layout_height="250.0dip">
-        <ListView android:id="@id/list1" android:padding="5.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <ListView android:id="@id/list2" android:padding="5.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </androidx.viewpager.widget.ViewPager>
-</LinearLayout>

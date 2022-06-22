@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@color/back" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="?textAppearanceListItem" android:id="@id/id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/text_margin" />
-    <TextView android:textAppearance="?textAppearanceListItem" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/text_margin" />
-</LinearLayout>
