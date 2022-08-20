@@ -10,14 +10,17 @@ import java.util.stream.Collectors;
 
 public class ReadManifestFile {
 
-    public static void main(String[] args) {
-
-        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
-        ReadManifestFile.readManifestFile(new File("./output/SendSMS"));
-    }
+//    public static void main(String[] args) {
+//
+//        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
+//        ReadManifestFile.readManifestFile(new File("./output/StartActivityForResult1"));
+//    }
     private static String fileLocationToRead;
+    static String activityNameWithAction;
     private static String fileName;
     private static String packageName;
+    public String supportedActionName;
+
     private static ArrayList<String> activitiesName = new ArrayList<>();
     private static ArrayList<String> manifestFileData = new ArrayList<>();
 
@@ -26,11 +29,11 @@ public class ReadManifestFile {
     private static HashMap<String,String> activityWithSupportedActions = new HashMap<>();
 
     //getters
-    public static String getPackageName() {
+    public  String getPackageName() {
         return packageName;
     }
 
-    public static HashMap<String, String> getActivityWithSupportedActions() {
+    public  HashMap<String, String> getActivityWithSupportedActions() {
         return activityWithSupportedActions;
     }
 
@@ -42,7 +45,7 @@ public class ReadManifestFile {
      * Read the manifest file
      *
      */
-    public static void readManifestFile(File fileLocation) {
+    public void readManifestFile(File fileLocation) {
 
         //REGEX for PackageName
         final Pattern packageNamePattern = Pattern.compile("package=\"[^\"]*\"", Pattern.CASE_INSENSITIVE);
@@ -59,7 +62,7 @@ public class ReadManifestFile {
          * read the manifest file line by line
          */
         fileLocationToRead = fileLocation + "/" + fileName;
-        System.out.println(fileLocationToRead);
+        //System.out.println(fileLocationToRead);
         try (BufferedReader br = new BufferedReader(new FileReader(fileLocationToRead))) {
 
             while ((line = br.readLine()) != null) {
@@ -73,7 +76,7 @@ public class ReadManifestFile {
                 if (matcher.find()) {
                     packageName = matcher.group().replace("package=\"", "")
                             .replace("\"", "");
-                    System.out.println(packageName);
+                    System.out.println("Package name is "+packageName);
                 }
 
                 //** store activity file names in a collection
@@ -109,18 +112,23 @@ public class ReadManifestFile {
 
         for (int i = 0 ; i < manifestFileData.size(); i++) {
             String manifestLine =manifestFileData.get(i);
-            String activityNameWithAction = "";
+
+
             if (manifestLine.startsWith("<activity ") &&
                     !manifestLine.endsWith("/>")){
-                System.out.println(manifestLine + " found it");
+               // System.out.println(manifestLine + " found it");
                             if (manifestLine.startsWith("<activity ") && manifestLine.contains("android:name")){
                                 int indexOf = manifestLine.indexOf("android:name");
-                                String subline = manifestLine.substring(indexOf)
-                                        .replace("android:name=\"", "")
-                                        .replace(packageName, "")
-                                        .replaceAll("[^a-zA-Z0-9]", "");
-                                activityNameWithAction= subline.trim();
-                                System.out.println(activityNameWithAction);
+//                                String subline = manifestLine.substring(indexOf)
+//                                        .replace("android:name=\"", "")
+//                                        .replace(packageName, "")
+//                                        .replaceAll("[^a-zA-Z0-9]", "");
+                                String subline = Arrays.stream(manifestLine.split("android:name"))
+                                        .collect(Collectors.toList()).get(1);
+                               // System.out.println(subline);
+
+                                activityNameWithAction= subline.substring(subline.indexOf("\"")+1,subline.indexOf("\">"));
+                               // System.out.println("Activity name with action "+activityNameWithAction);
 
                             }
 
@@ -148,7 +156,7 @@ public class ReadManifestFile {
                              String actionName = filteredIntent;
 
                              activityWithSupportedActions.put(activityNameWithAction,actionName);
-                            System.out.println(activityWithSupportedActions);
+                            //System.out.println(activityWithSupportedActions);
 
 
                          }
