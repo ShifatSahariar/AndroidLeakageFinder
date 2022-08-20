@@ -7,7 +7,6 @@
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
-
         <activity-alias android:label="MainActivity_VIEW" android:name="MainActivity_Alias" android:targetActivity="org.cert.echoer.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
