@@ -1,7 +1,8 @@
 /**
- * retrive package name 
+ * retrive package name
  * activity names in a collection
  */
+
 import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class ReadManifestFile {
 
-//    public static void main(String[] args) {
+    //    public static void main(String[] args) {
 //
 //        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
 //        ReadManifestFile.readManifestFile(new File("./output/StartActivityForResult1"));
@@ -25,15 +26,14 @@ public class ReadManifestFile {
     private static ArrayList<String> manifestFileData = new ArrayList<>();
 
 
-
-    private static HashMap<String,String> activityWithSupportedActions = new HashMap<>();
+    private static HashMap<String, String> activityWithSupportedActions = new HashMap<>();
 
     //getters
-    public  String getPackageName() {
+    public String getPackageName() {
         return packageName;
     }
 
-    public  HashMap<String, String> getActivityWithSupportedActions() {
+    public HashMap<String, String> getActivityWithSupportedActions() {
         return activityWithSupportedActions;
     }
 
@@ -51,7 +51,6 @@ public class ReadManifestFile {
 
     /**
      * Read the manifest file
-     *
      */
     public void readManifestFile(File fileLocation) {
 
@@ -84,7 +83,7 @@ public class ReadManifestFile {
                 if (matcher.find()) {
                     packageName = matcher.group().replace("package=\"", "")
                             .replace("\"", "");
-                    System.out.println("Package name is "+packageName);
+                    System.out.println("Package name is " + packageName);
                 }
 
                 //** store activity file names in a collection
@@ -97,9 +96,6 @@ public class ReadManifestFile {
                             .replace(packageName, "")
                             .replaceAll("[^a-zA-Z0-9]", "");
                     activitiesName.add(subline.trim());
-
-
-
 
 
                 }
@@ -115,60 +111,55 @@ public class ReadManifestFile {
         }
 
 
+        // System.out.println(manifestFileData);
 
-       // System.out.println(manifestFileData);
-
-        for (int i = 0 ; i < manifestFileData.size(); i++) {
-            String manifestLine =manifestFileData.get(i);
+        for (int i = 0; i < manifestFileData.size(); i++) {
+            String manifestLine = manifestFileData.get(i);
 
 
             if (manifestLine.startsWith("<activity ") &&
-                    !manifestLine.endsWith("/>")){
-               // System.out.println(manifestLine + " found it");
-                            if (manifestLine.startsWith("<activity ") && manifestLine.contains("android:name")){
-                                int indexOf = manifestLine.indexOf("android:name");
+                    !manifestLine.endsWith("/>")) {
+                // System.out.println(manifestLine + " found it");
+                if (manifestLine.startsWith("<activity ") && manifestLine.contains("android:name")) {
+                    int indexOf = manifestLine.indexOf("android:name");
 //                                String subline = manifestLine.substring(indexOf)
 //                                        .replace("android:name=\"", "")
 //                                        .replace(packageName, "")
 //                                        .replaceAll("[^a-zA-Z0-9]", "");
-                                String subline = Arrays.stream(manifestLine.split("android:name"))
-                                        .collect(Collectors.toList()).get(1);
-                               // System.out.println(subline);
+                    String subline = Arrays.stream(manifestLine.split("android:name"))
+                            .collect(Collectors.toList()).get(1);
+                    // System.out.println(subline);
 
-                                activityNameWithAction= subline.substring(subline.indexOf("\"")+1,subline.indexOf("\">"));
-                               // System.out.println("Activity name with action "+activityNameWithAction);
+                    activityNameWithAction = subline.substring(subline.indexOf("\"") + 1, subline.indexOf("\">"));
+                    // System.out.println("Activity name with action "+activityNameWithAction);
 
-                            }
-
-
+                }
 
 
-
-               // System.out.println(manifestFileData.get(i));
-                while (!manifestLine.startsWith("</intent-filter>")){
+                // System.out.println(manifestFileData.get(i));
+                while (!manifestLine.startsWith("</intent-filter>")) {
                     i++;
-                    manifestLine=manifestFileData.get(i);
+                    manifestLine = manifestFileData.get(i);
 
                     if (manifestLine.startsWith("<intent-filter>")
-                    ){
+                    ) {
                         continue;
-                    }
-                    else {
+                    } else {
 
 
                         String filteredIntent = manifestLine.substring(manifestLine.lastIndexOf('=') + 1)
                                 .replaceAll("['\"'/>]", "");
-                        if (manifestLine.startsWith("<action ")){
+                        if (manifestLine.startsWith("<action ")) {
                             // System.out.println(manifestFileData.get(i));
 
-                             String actionName = filteredIntent;
+                            String actionName = filteredIntent;
                             supportedActionName = actionName;
 
-                             activityWithSupportedActions.put(activityNameWithAction,actionName);
+                            activityWithSupportedActions.put(activityNameWithAction, actionName);
                             //System.out.println(activityWithSupportedActions);
 
 
-                         }
+                        }
 
                     }
 
@@ -178,19 +169,13 @@ public class ReadManifestFile {
             }
 
 
+            //while (filterSearch.startsWith("</intent")) {
+            //  System.out.println(filterSearch);
+            // filterSearch
+            //}
 
 
-                //while (filterSearch.startsWith("</intent")) {
-                  //  System.out.println(filterSearch);
-                   // filterSearch
-                //}
-
-
-            }
-
-
-
-
+        }
 
 
         // Intent filter actions have to store in a collection.
