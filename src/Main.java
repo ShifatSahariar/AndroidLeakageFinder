@@ -18,11 +18,11 @@ public class Main {
         ReadManifestFile readManifestFile = new ReadManifestFile();
         ReadActivitiesFile readActivitiesFile = new ReadActivitiesFile();
         //DB CONNECTION
-        List<HashMap<String, String>> databaseTable ;
+        List<HashMap<String, String>> databaseTable = new ArrayList<>();
         ConnDB connDB = new ConnDB();
         String dbPath = "./db/msec.db";
         connDB.open(dbPath);
-        connDB.clear_data();
+        //connDB.clear_data();
         //** Decode the APk
         //decoder.apkDecoder();//Step One
         //** Store Output APk Folders in a List
@@ -46,7 +46,7 @@ public class Main {
             readActivitiesFile.readActivityFile(readManifestFile.getPackageName(), primaryPath);//STEP FOUR
 
 
-            System.out.println(activityWithSupportedActions);
+            //System.out.println(activityWithSupportedActions);
 
             try {
 
@@ -68,20 +68,71 @@ public class Main {
             }
             // OUTPUT DATA FROM TABLE
             databaseTable = connDB.select();
-            for (HashMap<String, String> row : databaseTable) {
-                System.out.print(" | id: " + row.get("id"));
-                System.out.print(" | packageName: " + row.get("packageName"));
-                System.out.print(" | className: " + row.get("className"));
-                System.out.print(" | supportedAction: " + row.get("supportedAction"));
-                System.out.print(" | targetComponent: " + row.get("targetComponent"));
-                System.out.print(" | intentKey: " + row.get("intentKey"));
-                System.out.print(" | intentValue: " + row.get("intentValue"));
-                System.out.print(" | putSig: " + row.get("putSig"));
-                System.out.println("");
-            }
+//            for (HashMap<String, String> row : databaseTable) {
+//                System.out.print(" | id: " + row.get("id"));
+//                System.out.print(" | packageName: " + row.get("packageName"));
+//                System.out.print(" | className: " + row.get("className"));
+//                System.out.print(" | supportedAction: " + row.get("supportedAction"));
+//                System.out.print(" | targetComponent: " + row.get("targetComponent"));
+//                System.out.print(" | intentKey: " + row.get("intentKey"));
+//                System.out.print(" | intentValue: " + row.get("intentValue"));
+//                System.out.print(" | putSig: " + row.get("putSig"));
+//                System.out.println("");
+//            }
+
+
+
+
+
+
+
 
 
         }
+
+        System.out.println(databaseTable.get(2).get("targetAction") +"  "+databaseTable.get(2).get("packageName"));
+        System.out.println(databaseTable.size());
+        // START ANALYSING
+        try {
+            //First loop to iterate for every targetActions
+            for (int i = 0 ; i< databaseTable.size() ; i++){
+                if (databaseTable.get(i).get("targetAction").contains("action.SEND")){
+                    //Second Loop to iterate for every Supported Action
+                    for (int j = 0; j<databaseTable.size() ; j++){
+
+                        if (databaseTable.get(i).get("targetAction")
+                                .equals(databaseTable.get(j).get("supportedAction"))){
+
+                            if (databaseTable.get(i).get("packageName")
+                                    .equals((databaseTable.get(j).get("packageName")))){
+                                continue;
+                            }
+                            else
+                            {
+                                System.out.println(
+                                        databaseTable.get(j).get("className")
+                                                + " of the "+
+                                                databaseTable.get(j).get("packageName")+
+                                                " App may receive \n the sensitive data "+
+                                                databaseTable.get(i).get("intentValue")+
+                                                " \nfrom "+databaseTable.get(i).get("className") +
+                                                " class of "+ databaseTable.get(i).get("packageName")+" App.\n\n");
+                            }
+
+
+
+                        }
+                    }
+
+                }
+            }
+        }
+        catch (IndexOutOfBoundsException indexOutOfBoundsException){
+            return ;
+        }
+
+        connDB.clear_data();
+
 
 
 
