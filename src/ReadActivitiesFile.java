@@ -8,10 +8,6 @@ import java.util.stream.Collectors;
 
 public class ReadActivitiesFile {
 //  public static void main(String[] args) throws IOException {
-//
-//
-//
-//
 //      String primaryPath = "./output/SendSMS";
 //
 //    ReadActivitiesFile.readActivityFile
@@ -28,7 +24,24 @@ public class ReadActivitiesFile {
 
   private static String putSignatureAfterSplit;
     private static String putSignature;
-  private static String targetAction;
+
+    public  String getTargetAction() {
+        return targetAction;
+    }
+
+    public static String getValueOfTheKey() {
+        return valueOfTheKey;
+    }
+
+    public  String getKey() {
+        return Key;
+    }
+
+    public  String getTargetComponent() {
+        return targetComponent;
+    }
+
+    private static String targetAction;
 
     private static List<String> putExtraKeyValue = new ArrayList<>();
 

@@ -12,24 +12,25 @@ public class ConnDB {
     public static void main(String[] args) {
 
         ConnDB db = new ConnDB();
-        String dbPath = "../db/msec.db";
+        String dbPath = "./db/msec.db";
 
         db.open(dbPath);
 
         for (int i = 0; i < 3; i++) {
             db.insert(
-                    i + 1,
                     "packageName8",
                     "className9",
                     "supportedAction",
                     "targetComponent",
                     "targetAction",
                     "intentKey",
-                    "intentValue");
+                    "intentValue",
+                    "putSig");
         }
 
         List<HashMap<String, String>> table = db.select();
 
+        db.clear_data();
         db.close();
 
         for (HashMap<String, String> row : table) {
@@ -40,9 +41,9 @@ public class ConnDB {
             System.out.print(" | targetComponent: " + row.get("targetComponent"));
             System.out.print(" | intentKey: " + row.get("intentKey"));
             System.out.print(" | intentValue: " + row.get("intentValue"));
+            System.out.print(" | putSig: " + row.get("putSig"));
             System.out.println("");
         }
-
     }
 
     private static Connection conn = null;
@@ -50,7 +51,6 @@ public class ConnDB {
     // Connection control
     public Connection open(String dbPath) {
         if (conn != null)
-
             return conn;
 
         try {
@@ -75,41 +75,45 @@ public class ConnDB {
 
     // Public API
     public void insert(
-            int id,
             String packageName,
             String className,
             String supportedAction,
             String targetComponent,
             String targetAction,
             String intentKey,
-            String intentValue) {
+            String intentValue,
+            String putSig) {
         insertImpl(
                 "info",
-                id,
                 packageName,
                 className,
                 supportedAction,
                 targetComponent,
                 targetAction,
                 intentKey,
-                intentValue);
+                intentValue,
+                putSig);
     }
 
     public List<HashMap<String, String>> select() {
         return selectImpl("info");
     }
 
+    public void clear_data() {
+        deleteImpl("info");
+    }
+
     // Internal API
     private void insertImpl(
             String tableName,
-            int id,
             String packageName,
             String className,
             String supportedAction,
             String targetComponent,
             String targetAction,
             String intentKey,
-            String intentValue) {
+            String intentValue,
+            String putSig) {
 
         try {
             Statement statement = conn.createStatement();
@@ -117,15 +121,23 @@ public class ConnDB {
             statement.setQueryTimeout(30);
             statement.executeUpdate(
                     "INSERT INTO " + tableName + " " +
+                            "(package_name, " +
+                            "class_name, " +
+                            "supported_action, " +
+                            "target_component, " +
+                            "target_action, " +
+                            "intent_key, " +
+                            "intent_value, " +
+                            "put_signature) " +
                             "VALUES (" +
-                            "'" + id + "', " +
                             "'" + packageName + "', " +
                             "'" + className + "', " +
                             "'" + supportedAction + "', " +
                             "'" + targetComponent + "', " +
                             "'" + targetAction + "', " +
                             "'" + intentKey + "', " +
-                            "'" + intentValue + "'" +
+                            "'" + intentValue + "', " +
+                            "'" + putSig + "'" +
                             ");");
 
         } catch (SQLException e) {
@@ -152,6 +164,7 @@ public class ConnDB {
                 row.put("targetAction", rs.getString("target_action"));
                 row.put("intentKey", rs.getString("intent_key"));
                 row.put("intentValue", rs.getString("intent_value"));
+                row.put("putSig", rs.getString("put_signature"));
 
                 table.add(row);
             }
@@ -163,5 +176,17 @@ public class ConnDB {
         }
 
         return null;
+    }
+
+    private void deleteImpl(String tableName) {
+        try {
+            Statement statement = conn.createStatement();
+            statement.setQueryTimeout(30);
+
+            statement.executeUpdate("DELETE FROM " + tableName + ";");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

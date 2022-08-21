@@ -16,5 +16,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="sqlite-jdbc-3.39.2.0" level="application" />
+    <orderEntry type="library" name="apktool" level="application" />
   </component>
 </module>

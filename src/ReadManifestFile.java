@@ -41,6 +41,14 @@ public class ReadManifestFile {
         return activitiesName;
     }
 
+    public String getSupportedActionName() {
+        return supportedActionName;
+    }
+
+    public static String getActivityNameWithAction() {
+        return activityNameWithAction;
+    }
+
     /**
      * Read the manifest file
      *
@@ -154,6 +162,7 @@ public class ReadManifestFile {
                             // System.out.println(manifestFileData.get(i));
 
                              String actionName = filteredIntent;
+                            supportedActionName = actionName;
 
                              activityWithSupportedActions.put(activityNameWithAction,actionName);
                             //System.out.println(activityWithSupportedActions);
