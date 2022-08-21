@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class Main {
     public static void main(String[] args) throws AndrolibException, IOException, DirectoryException {
 
@@ -26,11 +27,16 @@ public class Main {
         //connDB.clear_data();
         //** Decode the APk
 
-        decoder.apkDecoder();//Step ONE
+       // decoder.apkDecoder();//Step ONE
         //** Store Output APk Folders in a List
         String[] directories = theDir.list((dir, name) -> new File(dir, name).isDirectory());
         List<String> apkDirectory = Arrays.stream(directories).collect(Collectors.toList()); //Step Two
-        System.out.println("APK's we are going to Analyze are \n"+apkDirectory);
+        if (apkDirectory.isEmpty()) {
+            System.out.println("Please put some APK's to Analyze in Input folder ");
+        } else {
+            System.out.println("APK's we are going to Analyze are \n" + apkDirectory);
+        }
+
         /**
          * Read the Activity Files trough Individual App
          */
@@ -51,17 +57,17 @@ public class Main {
             //System.out.println(activityWithSupportedActions);
 
             try {
-                for (int i=0;i< activitiesInfoForDB.size();i++) {
+                for (int i = 0; i < activitiesInfoForDB.size(); i++) {
 
                     connDB.insert(
                             (String) activitiesInfoForDB.get(i).get("packageName"),
-                            (String)activitiesInfoForDB.get(i).get("className"),
-                            (String)activitiesInfoForDB.get(i).get("supportedAction"),
-                            (String)activitiesInfoForDB.get(i).get("targetComponent"),
-                            (String)activitiesInfoForDB.get(i).get("targetAction"),
-                            (String)activitiesInfoForDB.get(i).get("intentKey"),
-                            (String)activitiesInfoForDB.get(i).get("intentValue"),
-                            (String)activitiesInfoForDB.get(i).get("putSig")
+                            (String) activitiesInfoForDB.get(i).get("className"),
+                            (String) activitiesInfoForDB.get(i).get("supportedAction"),
+                            (String) activitiesInfoForDB.get(i).get("targetComponent"),
+                            (String) activitiesInfoForDB.get(i).get("targetAction"),
+                            (String) activitiesInfoForDB.get(i).get("intentKey"),
+                            (String) activitiesInfoForDB.get(i).get("intentValue"),
+                            (String) activitiesInfoForDB.get(i).get("putSig")
                     );
                 }
 
@@ -70,57 +76,55 @@ public class Main {
             }
             // OUTPUT DATA FROM TABLE
             databaseTable = connDB.select();
-            for (HashMap<String, String> row : databaseTable) {
-                System.out.print(" | id: " + row.get("id"));
-                System.out.print(" | packageName: " + row.get("packageName"));
-                System.out.print(" | className: " + row.get("className"));
-                System.out.print(" | supportedAction: " + row.get("supportedAction"));
-                System.out.print(" | targetComponent: " + row.get("targetComponent"));
-                System.out.print(" | intentKey: " + row.get("intentKey"));
-                System.out.print(" | intentValue: " + row.get("intentValue"));
-                System.out.print(" | putSig: " + row.get("putSig"));
-                System.out.println("");
-            }
-
-
-
 
             activitiesInfoForDB.clear();
 
 
+        }
+        System.out.println("\n");
 
+        for (HashMap<String, String> row : databaseTable) {
 
+            System.out.print(" | id: " + row.get("id"));
+            System.out.print(" | packageName: " + row.get("packageName"));
+            System.out.print(" | className: " + row.get("className"));
+            System.out.print(" | supportedAction: " + row.get("supportedAction"));
+            System.out.print(" | targetComponent: " + row.get("targetComponent"));
+            System.out.print(" | intentKey: " + row.get("intentKey"));
+            System.out.print(" | intentValue: " + row.get("intentValue"));
+            System.out.print(" | putSig: " + row.get("putSig"));
+            System.out.println("");
         }
 
-       // System.out.println(databaseTable.get(2).get("targetAction") +"  "+databaseTable.get(2).get("packageName"));
-        System.out.println(databaseTable.size());
+        // System.out.println(databaseTable.get(2).get("targetAction") +"  "+databaseTable.get(2).get("packageName"));
+        System.out.println("\n");
+        System.out.println("Total "+ databaseTable.size()+ " Entries Found .");
+        System.out.println("\n");
         // START ANALYSING
         try {
             //First loop to iterate for every targetActions
-            for (int i = 0 ; i< databaseTable.size() ; i++){
-                if (databaseTable.get(i).get("targetAction").contains("action.SEND")){
+            for (int i = 0; i < databaseTable.size(); i++) {
+                if (databaseTable.get(i).get("targetAction").contains("action.SEND")) {
                     //Second Loop to iterate for every Supported Action
-                    for (int j = 0; j<databaseTable.size() ; j++){
+                    for (int j = 0; j < databaseTable.size(); j++) {
 
                         if (databaseTable.get(i).get("targetAction")
-                                .equals(databaseTable.get(j).get("supportedAction"))){
+                                .equals(databaseTable.get(j).get("supportedAction"))) {
 
                             if (databaseTable.get(i).get("packageName")
-                                    .equals((databaseTable.get(j).get("packageName")))){
+                                    .equals((databaseTable.get(j).get("packageName")))) {
                                 continue;
-                            }
-                            else
-                            {
+                            } else {
                                 System.out.println(
+                                        "INTER APP COMMUNICATION \n"+
                                         databaseTable.get(j).get("className")
-                                                + " of the "+
-                                                databaseTable.get(j).get("packageName")+
-                                                " App may receive \n the sensitive data "+
-                                                databaseTable.get(i).get("intentValue")+
-                                                " \nfrom "+databaseTable.get(i).get("className") +
-                                                " class of "+ databaseTable.get(i).get("packageName")+" App.\n\n");
+                                                + " of the " +
+                                                databaseTable.get(j).get("packageName") +
+                                                " App may receive \n the sensitive data " +
+                                                databaseTable.get(i).get("intentValue") +
+                                                " \nfrom " + databaseTable.get(i).get("className") +
+                                                " class of " + databaseTable.get(i).get("packageName") + " App.\n\n");
                             }
-
 
 
                         }
@@ -128,14 +132,11 @@ public class Main {
 
                 }
             }
+        } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
+            return;
         }
-        catch (IndexOutOfBoundsException indexOutOfBoundsException){
-            return ;
-        }
 
-       connDB.clear_data();
-
-
+        connDB.clear_data();
 
 
     }

@@ -9,12 +9,12 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ReadActivitiesFile {
-  public static void main(String[] args) throws IOException {
-      String primaryPath = "./output/SendSMS";
-
-    ReadActivitiesFile.readActivityFile
-            (primaryPath);
-  }
+//  public static void main(String[] args) throws IOException {
+//      String primaryPath = "./output/SendSMS";
+//
+//    ReadActivitiesFile.readActivityFile
+//            (primaryPath);
+//  }
     private static ReadManifestFile readManifestFile = new ReadManifestFile();
     private static String appDirectory;
     private static String targetComponent;

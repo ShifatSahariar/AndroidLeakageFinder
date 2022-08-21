@@ -11,11 +11,11 @@ import java.util.stream.Collectors;
 
 public class ReadManifestFile {
 
-        public static void main(String[] args) {
-
-        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
-        ReadManifestFile.readManifestFile(new File("./output/StartActivityForResult1"));
-    }
+//        public static void main(String[] args) {
+//
+//        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
+//        ReadManifestFile.readManifestFile(new File("./output/StartActivityForResult1"));
+//    }
 
     private static String fileLocationToRead;
     static String activityNameWithAction;
