@@ -45,7 +45,7 @@ public class ReadManifestFile {
         return supportedActionName;
     }
 
-    public static String getActivityNameWithAction() {
+    public String getActivityNameWithAction() {
         return activityNameWithAction;
     }
 

@@ -3,6 +3,7 @@ import brut.directory.DirectoryException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -17,10 +18,11 @@ public class Main {
         ReadManifestFile readManifestFile = new ReadManifestFile();
         ReadActivitiesFile readActivitiesFile = new ReadActivitiesFile();
         //DB CONNECTION
+        List<HashMap<String, String>> databaseTable ;
         ConnDB connDB = new ConnDB();
         String dbPath = "./db/msec.db";
         connDB.open(dbPath);
-
+        connDB.clear_data();
         //** Decode the APk
         //decoder.apkDecoder();//Step One
         //** Store Output APk Folders in a List
@@ -45,13 +47,18 @@ public class Main {
 
 
             System.out.println(activityWithSupportedActions);
+
             try {
+
                 connDB.insert(
                         readManifestFile.getPackageName(),
-                        "",
-                        "",
+                        readManifestFile.getActivityNameWithAction(),
+                        readManifestFile.getSupportedActionName(),
                         readActivitiesFile.getTargetComponent(),
-                        readActivitiesFile.getTargetAction(), readActivitiesFile.getKey(), readActivitiesFile.getValueOfTheKey(), ""
+                        readActivitiesFile.getTargetAction(),
+                        readActivitiesFile.getKey(),
+                        readActivitiesFile.getValueOfTheKey(),
+                        readActivitiesFile.getPutSignatureAfterSplit()
 
 
                 );
@@ -59,10 +66,23 @@ public class Main {
             } catch (NullPointerException nullPointerException) {
 
             }
-            System.out.println(connDB.select().stream().collect(Collectors.toList()));
+            // OUTPUT DATA FROM TABLE
+            databaseTable = connDB.select();
+            for (HashMap<String, String> row : databaseTable) {
+                System.out.print(" | id: " + row.get("id"));
+                System.out.print(" | packageName: " + row.get("packageName"));
+                System.out.print(" | className: " + row.get("className"));
+                System.out.print(" | supportedAction: " + row.get("supportedAction"));
+                System.out.print(" | targetComponent: " + row.get("targetComponent"));
+                System.out.print(" | intentKey: " + row.get("intentKey"));
+                System.out.print(" | intentValue: " + row.get("intentValue"));
+                System.out.print(" | putSig: " + row.get("putSig"));
+                System.out.println("");
+            }
 
 
         }
+
 
 
     }

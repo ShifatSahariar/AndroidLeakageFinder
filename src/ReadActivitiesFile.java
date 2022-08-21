@@ -57,6 +57,10 @@ public class ReadActivitiesFile {
 
     private static HashMap<String, List<String>> activityWithIntentDetails = new HashMap<>();
 
+    public String getPutSignatureAfterSplit() {
+        return putSignatureAfterSplit;
+    }
+
     public static void readActivityFile(String packageName, String primaryPath) throws IOException {
         List<File> activitiesListToRead = new ArrayList<>();
         /**
