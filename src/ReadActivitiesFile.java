@@ -1,19 +1,21 @@
 import org.apache.commons.lang3.ArrayUtils;
 
+import javax.swing.text.html.parser.Entity;
 import java.io.*;
+import java.security.KeyStore;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ReadActivitiesFile {
-//  public static void main(String[] args) throws IOException {
-//      String primaryPath = "./output/SendSMS";
-//
-//    ReadActivitiesFile.readActivityFile
-//            ("org.cert.sendsms", primaryPath);
-//  }
+  public static void main(String[] args) throws IOException {
+      String primaryPath = "./output/SendSMS";
 
+    ReadActivitiesFile.readActivityFile
+            (primaryPath);
+  }
+    private static ReadManifestFile readManifestFile = new ReadManifestFile();
     private static String appDirectory;
     private static String targetComponent;
     private static String lastLocalValue;
@@ -24,6 +26,12 @@ public class ReadActivitiesFile {
 
     private static String putSignatureAfterSplit;
     private static String putSignature;
+
+    private static List<HashMap> activitiesInfoForDB = new ArrayList<>();
+
+    public static List<HashMap> getActivitiesInfoForDB() {
+        return activitiesInfoForDB;
+    }
 
     public String getTargetAction() {
         return targetAction;
@@ -61,13 +69,24 @@ public class ReadActivitiesFile {
         return putSignatureAfterSplit;
     }
 
-    public static void readActivityFile(String packageName, String primaryPath) throws IOException {
+
+
+    public static void readActivityFile(String primaryPath) throws IOException {
+        /**
+         * Read Manifest File information
+         * @PackageName
+         * @SupportedAction
+         */
+        readManifestFile.readManifestFile(new File(primaryPath)); // End of Manifest Reading
+
+        //System.out.println(readManifestFile.getPackageName()+" got it");
+
         List<File> activitiesListToRead = new ArrayList<>();
         /**
          * Read the necessary Activity list from the location and filter unwanted files
          */
         appDirectory = primaryPath + "/smali";
-        appDirectory = primaryPath + "/smali/" + packageName.replace(".", "/");
+        appDirectory = primaryPath + "/smali/" + readManifestFile.getPackageName().replace(".", "/");
         //System.out.println(appDirectory);
         File appActivitiesLocation = new File(appDirectory);
         List<File> listOfActivitiesFound = Arrays.stream(appActivitiesLocation.listFiles()).collect(Collectors.toList());
@@ -82,7 +101,7 @@ public class ReadActivitiesFile {
 
         }
 
-        System.out.println("Files need to Read " + activitiesListToRead + "\n");
+        //System.out.println("Files need to Read " + activitiesListToRead + "\n");
 
 
         /**
@@ -91,7 +110,7 @@ public class ReadActivitiesFile {
         for (File apkFile : activitiesListToRead
         ) {
 
-
+            //System.out.println(apkFile.getName());
             ArrayList<String> activtyAfterReadAsList = new ArrayList<>();
             activityFileReader = new BufferedReader(new FileReader(apkFile));
             // System.out.println("File Read for "+ apkFile+"\n");
@@ -104,7 +123,7 @@ public class ReadActivitiesFile {
             activityFileReader.close();
             activtyAfterReadAsList.removeAll(Arrays.asList("", null));
 
-            System.out.println(activtyAfterReadAsList);
+            //System.out.println(activtyAfterReadAsList);
 
             /**
              *  ACTION CHECK
@@ -114,7 +133,7 @@ public class ReadActivitiesFile {
 
                 if (lineOfActivity.contains("->startActivityForResult(Landroid/content/Intent")
                 ) {
-                    System.out.println(lineOfActivity);
+                    //System.out.println(lineOfActivity);
                     String invokeVirtual = Arrays.stream(lineOfActivity.split("},")).collect(Collectors.toList()).get(0);
                     String intentRegister = Arrays.stream(Arrays.stream(invokeVirtual.split("\\{")).collect(Collectors.toList()).get(1)
                             .split(",")).collect(Collectors.toList()).get(1).trim();
@@ -150,7 +169,7 @@ public class ReadActivitiesFile {
                                             if (searchInitialValueofIntent.trim().contains("ACTION".toLowerCase())) {
                                                 targetAction = Arrays.stream(searchInitialValueofIntent.split(","))
                                                         .collect(Collectors.toList()).get(1).replace("\"", "").trim();
-                                                System.out.println(targetAction);
+                                               // System.out.println(targetAction);
                                             }
 
                                         }
@@ -174,7 +193,7 @@ public class ReadActivitiesFile {
                             putSignature = putExtraSearch;
                             putSignatureAfterSplit = Arrays.stream(putSignature.split("->"))
                                     .collect(Collectors.toList()).get(1);
-                            System.out.println("PutSignature to Store in DB " + putSignatureAfterSplit);
+                          //  System.out.println("PutSignature to Store in DB " + putSignatureAfterSplit);
                             //Find the Key
                             putExtraKeyValue = Arrays.stream(putExtraSearch.trim()
                                             .substring(putExtraSearch.indexOf("{") + 1,
@@ -209,7 +228,7 @@ public class ReadActivitiesFile {
 
                             // found the last value of the KEY register .
 
-                            System.out.println("Key to send intent " + Key);
+                            //System.out.println("Key to send intent " + Key);
                         }
                         // Value search of the KEY
                         // if it start with const-string
@@ -259,10 +278,77 @@ public class ReadActivitiesFile {
                     }
                 }
             }
+            // INSERT ALL INFO for EACH ACTIVITY
+            HashMap<String,String> activityInformations = new HashMap<>();
+            //System.out.println(readManifestFile.getActivityWithSupportedActions());
+            String classNameSplited = apkFile.getName().replace(".smali","").trim();
+
+          //System.out.println("Information about " + apkFile.getName());
+            activityInformations.put("className",classNameSplited);
+
+          //System.out.println(readManifestFile.getPackageName());
+          activityInformations.put("packageName",readManifestFile.getPackageName());
+
+          //System.out.println("Class Name "+ apkFile.getName());
+            for (String key :readManifestFile.getActivityWithSupportedActions().keySet()
+            ) {
+                //if found
+                if (key.contains(classNameSplited)){
+                    //System.out.println("supportedAction "+readManifestFile.getActivityWithSupportedActions().get(key));
+                    activityInformations.put("supportedAction",readManifestFile.getActivityWithSupportedActions().get(key));
+                }
+                //if not found
+                else {
+                    //System.out.println("no supported action");
+                    activityInformations.put("supportedAction","");
+                }
+            }
+
+            //System.out.println("Target Component " + targetComponent);
+            activityInformations.put("targetComponent",targetComponent);
+
+            //System.out.println("Target Action "+ targetAction);
+            activityInformations.put("targetAction",targetAction);
+
+            //System.out.println("Key "+ Key);
+            activityInformations.put("intentKey",Key);
+
+            //System.out.println("Value "+ valueOfTheKey);
+            activityInformations.put("intentValue",valueOfTheKey);
+
+            //System.out.println("Put Signature "+ putSignatureAfterSplit);
+            activityInformations.put("putSig",putSignatureAfterSplit);
+            //System.out.println(activityInformations);
+            activitiesInfoForDB.add(activityInformations);
+
+
+
+
+            // Check if this activity has any supported action
+//            for (String key :readManifestFile.getActivityWithSupportedActions().keySet()
+//            ) {
+//                    //if found
+//                if (key.contains(classNameSplited)){
+//                    activityInformations.put("supportedAction",readManifestFile.getActivityWithSupportedActions().get(key));
+//                }
+//                //if not found
+//                else activityInformations.put("supportedAction","");
+//            }
+
+//            activityInformations.put("targetComponent",targetComponent);
+//
+//
+//
+//
+            // end of one activity
+            //** Add each activity INFO in a list
+            //activitiesInfoForDB.add(activityInformations);
+
 
             activtyAfterReadAsList.clear();
         }
-        System.out.println(valueOfTheKey);
+
+       // System.out.println(activitiesInfoForDB);
 
     }
 

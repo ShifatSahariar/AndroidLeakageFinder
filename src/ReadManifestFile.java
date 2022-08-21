@@ -11,22 +11,24 @@ import java.util.stream.Collectors;
 
 public class ReadManifestFile {
 
-    //    public static void main(String[] args) {
-//
-//        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
-//        ReadManifestFile.readManifestFile(new File("./output/StartActivityForResult1"));
-//    }
+        public static void main(String[] args) {
+
+        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
+        ReadManifestFile.readManifestFile(new File("./output/StartActivityForResult1"));
+    }
+
     private static String fileLocationToRead;
     static String activityNameWithAction;
     private static String fileName;
     private static String packageName;
-    public String supportedActionName;
+    public static String supportedActionName;
 
     private static ArrayList<String> activitiesName = new ArrayList<>();
     private static ArrayList<String> manifestFileData = new ArrayList<>();
 
 
-    private static HashMap<String, String> activityWithSupportedActions = new HashMap<>();
+    private static final List<HashMap<String, String>> allActivitesWithSupportedActions = new ArrayList<>();
+    private static final HashMap<String,String> activityWithSupportedActions = new HashMap<>();
 
     //getters
     public String getPackageName() {
@@ -52,7 +54,7 @@ public class ReadManifestFile {
     /**
      * Read the manifest file
      */
-    public void readManifestFile(File fileLocation) {
+    public static void readManifestFile(File fileLocation) {
 
         //REGEX for PackageName
         final Pattern packageNamePattern = Pattern.compile("package=\"[^\"]*\"", Pattern.CASE_INSENSITIVE);
@@ -83,7 +85,7 @@ public class ReadManifestFile {
                 if (matcher.find()) {
                     packageName = matcher.group().replace("package=\"", "")
                             .replace("\"", "");
-                    System.out.println("Package name is " + packageName);
+                    //System.out.println("Package name is " + packageName);
                 }
 
                 //** store activity file names in a collection
@@ -156,6 +158,8 @@ public class ReadManifestFile {
                             supportedActionName = actionName;
 
                             activityWithSupportedActions.put(activityNameWithAction, actionName);
+                            //allActivitesWithSupportedActions.add(activityWithSupportedActions);
+                            //System.out.println(allActivitesWithSupportedActions+" this is list of hashmap");
                             //System.out.println(activityWithSupportedActions);
 
 
