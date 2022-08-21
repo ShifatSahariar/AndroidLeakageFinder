@@ -30,7 +30,7 @@ public class Main {
             //System.out.println(readManifestFile.getPackageName());
             //HashMap<String, String> activityWithSupportedActions = readManifestFile.getActivityWithSupportedActions();
             readActivitiesFile.readActivityFile(readManifestFile.getPackageName(),primaryPath );
-            System.out.println("Shifat");
+            //System.out.println("Test");
             //System.out.println(activityWithSupportedActions);
 
         }
