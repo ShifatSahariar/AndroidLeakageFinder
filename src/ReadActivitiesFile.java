@@ -9,12 +9,12 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ReadActivitiesFile {
-  public static void main(String[] args) throws IOException {
-      String primaryPath = "./output/Echoer";
-
-    ReadActivitiesFile.readActivityFile
-            (primaryPath);
-  }
+//  public static void main(String[] args) throws IOException {
+//      String primaryPath = "./output/Echoer";
+//
+//    ReadActivitiesFile.readActivityFile
+//            (primaryPath);
+//  }
     private static ReadManifestFile readManifestFile = new ReadManifestFile();
     private static String appDirectory;
     private static String targetComponent;
@@ -87,7 +87,10 @@ public class ReadActivitiesFile {
         appDirectory = primaryPath + "/smali/" + readManifestFile.getPackageName().replace(".", "/");
         //System.out.println(appDirectory);
         File appActivitiesLocation = new File(appDirectory);
-        List<File> listOfActivitiesFound = Arrays.stream(appActivitiesLocation.listFiles()).collect(Collectors.toList());
+        try {
+            List<File> listOfActivitiesFound = Arrays.stream(appActivitiesLocation.listFiles()).collect(Collectors.toList());
+
+
         //System.out.println(listOfActivitiesFound);
         for (int i = 0; i < listOfActivitiesFound.size(); i++) {
 
@@ -98,7 +101,10 @@ public class ReadActivitiesFile {
             }
 
         }
+        }
+        catch (NullPointerException nullPointerException){
 
+        }
         //System.out.println("Files need to Read " + activitiesListToRead + "\n");
 
 
@@ -108,7 +114,7 @@ public class ReadActivitiesFile {
         for (File apkFile : activitiesListToRead
         ) {
             //String targetAction ="";
-            System.out.println(apkFile.getName());
+          //  System.out.println(apkFile.getName());
             ArrayList<String> activtyAfterReadAsList = new ArrayList<>();
             activityFileReader = new BufferedReader(new FileReader(apkFile));
             // System.out.println("File Read for "+ apkFile+"\n");
@@ -315,7 +321,7 @@ public class ReadActivitiesFile {
             //System.out.println("Target Component " + targetComponent);
             activityInformations.put("targetComponent",targetComponent);
 
-            System.out.println("Target Action "+ targetAction);
+            //System.out.println("Target Action "+ targetAction);
             activityInformations.put("targetAction",targetAction);
 
             //System.out.println("Key "+ Key);
@@ -356,7 +362,7 @@ public class ReadActivitiesFile {
             activtyAfterReadAsList.clear();
         }
 
-       System.out.println(activitiesInfoForDB);
+       //System.out.println(activitiesInfoForDB);
 
 
     }

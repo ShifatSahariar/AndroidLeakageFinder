@@ -27,6 +27,7 @@ public class Main {
         //connDB.clear_data();
         //** Decode the APk
 
+
          decoder.apkDecoder();//Step ONE
         //** Store Output APk Folders in a List
         String[] directories = theDir.list((dir, name) -> new File(dir, name).isDirectory());

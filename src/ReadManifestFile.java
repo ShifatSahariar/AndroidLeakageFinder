@@ -11,11 +11,11 @@ import java.util.stream.Collectors;
 
 public class ReadManifestFile {
 
-        public static void main(String[] args) {
-
-        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
-        ReadManifestFile.readManifestFile(new File("./output/Echoer"));
-    }
+//        public static void main(String[] args) {
+//
+//        //OutputFoldersList outputFoldersList =OutputFoldersList.getInstance();
+//        ReadManifestFile.readManifestFile(new File("./output/Echoer"));
+//    }
 
     private static String fileLocationToRead;
     static String activityNameWithAction;
@@ -158,10 +158,10 @@ public class ReadManifestFile {
                             supportedActionName = actionName;
 
                             activityWithSupportedActions.put(activityNameWithAction, actionName);
-                            System.out.println(supportedActionName);
+                            //System.out.println(supportedActionName);
                             //allActivitesWithSupportedActions.add(activityWithSupportedActions);
                             //System.out.println(allActivitesWithSupportedActions+" this is list of hashmap");
-                            System.out.println(activityWithSupportedActions);
+                           // System.out.println(activityWithSupportedActions);
 
 
                         }
