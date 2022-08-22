@@ -70,6 +70,10 @@ public class ReadActivitiesFile {
 
 
     public static void readActivityFile(String primaryPath) throws IOException {
+
+
+
+
         /**
          * Read Manifest File information
          * @PackageName
@@ -78,6 +82,27 @@ public class ReadActivitiesFile {
         readManifestFile.readManifestFile(new File(primaryPath)); // End of Manifest Reading
 
         //System.out.println(readManifestFile.getPackageName()+" got it");
+        //Try to find Smali Directory
+//        File folderLook = new File(primaryPath);
+//        List<String> outputfiles = Arrays.stream(Objects.requireNonNull(folderLook.list())).
+//                filter(p -> p.contains("smali")).collect(Collectors.toList());
+//        for (String smaliFolder:outputfiles
+//        ) {
+//            System.out.println(smaliFolder);
+//            System.out.println(readManifestFile.getPackageName().replace(".", "/"));
+//            appDirectory = primaryPath + "/"+ smaliFolder+"/" + readManifestFile.getPackageName().replace(".", "/");
+//            System.out.println(appDirectory);
+//            File appActivitiesLocation = new File(appDirectory);
+//
+//            List<File> ifSmaliFOundinThisFolder = Arrays.stream(appActivitiesLocation.listFiles()).collect(Collectors.toList());
+//             for (int i =0; i<ifSmaliFOundinThisFolder.size();i++){
+//                 String checkSmaliFileType = String.valueOf(ifSmaliFOundinThisFolder.get(i));
+//                if (checkSmaliFileType.contains())
+//
+//             }
+//
+//            System.out.println(ifSmaliFOundinThisFolder);
+//        }
 
         List<File> activitiesListToRead = new ArrayList<>();
         /**
@@ -182,7 +207,7 @@ public class ReadActivitiesFile {
                                             if (searchInitialValueofIntent.trim().contains("ACTION".toLowerCase())) {
                                                 targetAction = Arrays.stream(searchInitialValueofIntent.split(","))
                                                         .collect(Collectors.toList()).get(1).replace("\"", "").trim();
-                                                System.out.println(targetAction);
+                                               // System.out.println(targetAction);
                                             }
 
 
