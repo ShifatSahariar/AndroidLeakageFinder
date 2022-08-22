@@ -9,12 +9,12 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ReadActivitiesFile {
-//  public static void main(String[] args) throws IOException {
-//      String primaryPath = "./output/SendSMS";
-//
-//    ReadActivitiesFile.readActivityFile
-//            (primaryPath);
-//  }
+  public static void main(String[] args) throws IOException {
+      String primaryPath = "./output/Echoer";
+
+    ReadActivitiesFile.readActivityFile
+            (primaryPath);
+  }
     private static ReadManifestFile readManifestFile = new ReadManifestFile();
     private static String appDirectory;
     private static String targetComponent;
@@ -33,9 +33,7 @@ public class ReadActivitiesFile {
         return activitiesInfoForDB;
     }
 
-    public String getTargetAction() {
-        return targetAction;
-    }
+
 
     public static String getValueOfTheKey() {
         return valueOfTheKey;
@@ -109,8 +107,8 @@ public class ReadActivitiesFile {
          */
         for (File apkFile : activitiesListToRead
         ) {
-
-            //System.out.println(apkFile.getName());
+            //String targetAction ="";
+            System.out.println(apkFile.getName());
             ArrayList<String> activtyAfterReadAsList = new ArrayList<>();
             activityFileReader = new BufferedReader(new FileReader(apkFile));
             // System.out.println("File Read for "+ apkFile+"\n");
@@ -131,7 +129,7 @@ public class ReadActivitiesFile {
             for (String lineOfActivity : activtyAfterReadAsList
             ) {
 
-                if (lineOfActivity.contains("->startActivityForResult(Landroid/content/Intent")
+                if (lineOfActivity.contains("->startActivity")
                 ) {
                     //System.out.println(lineOfActivity);
                     String invokeVirtual = Arrays.stream(lineOfActivity.split("},")).collect(Collectors.toList()).get(0);
@@ -153,11 +151,18 @@ public class ReadActivitiesFile {
                             ) {
                                 if (searchInvoleIntentDirect.contains("<init>") &&
                                         searchInvoleIntentDirect.trim().contains(intentRegister)) {
+                                    String findTheInitialValue;
                                     //find the register which has initialaized in intent
-                                    String findTheInitialValue = Arrays.stream(Arrays.stream(Arrays.stream(searchInvoleIntentDirect.split("},"))
-                                                            .collect(Collectors.toList()).get(0).split("\\{"))
-                                                    .collect(Collectors.toList()).get(1).split(","))
-                                            .collect(Collectors.toList()).get(1).trim();
+                                    try {
+                                        findTheInitialValue = Arrays.stream(Arrays.stream(Arrays.stream(searchInvoleIntentDirect.split("},"))
+                                                                .collect(Collectors.toList()).get(0).split("\\{"))
+                                                        .collect(Collectors.toList()).get(1).split(","))
+                                                .collect(Collectors.toList()).get(1).trim();
+                                    }
+                                    catch (IndexOutOfBoundsException e){
+                                        return;
+                                    }
+
                                     // System.out.println(findTheInitialValue);
                                     // System.out.println(searchInvoleIntentDirect);
 
@@ -166,11 +171,14 @@ public class ReadActivitiesFile {
                                         if (searchInitialValueofIntent.trim().contains("const-string")
                                                 && searchInitialValueofIntent.trim().contains(findTheInitialValue)) {
 
+
+
                                             if (searchInitialValueofIntent.trim().contains("ACTION".toLowerCase())) {
                                                 targetAction = Arrays.stream(searchInitialValueofIntent.split(","))
                                                         .collect(Collectors.toList()).get(1).replace("\"", "").trim();
-                                               // System.out.println(targetAction);
+                                                System.out.println(targetAction);
                                             }
+
 
                                         }
                                     }
@@ -300,14 +308,14 @@ public class ReadActivitiesFile {
                 //if not found
                 else {
                     //System.out.println("no supported action");
-                    activityInformations.put("supportedAction","");
+                    //activityInformations.put("supportedAction","");
                 }
             }
 
             //System.out.println("Target Component " + targetComponent);
             activityInformations.put("targetComponent",targetComponent);
 
-            //System.out.println("Target Action "+ targetAction);
+            System.out.println("Target Action "+ targetAction);
             activityInformations.put("targetAction",targetAction);
 
             //System.out.println("Key "+ Key);
@@ -348,7 +356,8 @@ public class ReadActivitiesFile {
             activtyAfterReadAsList.clear();
         }
 
-       // System.out.println(activitiesInfoForDB);
+       System.out.println(activitiesInfoForDB);
+
 
     }
 

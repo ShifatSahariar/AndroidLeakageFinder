@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="sqlite-jdbc-3.39.2.0">
+    <archive path="/Users/shifatsahariar/MyGitRep/ReApkSmali/lib/sqlite-jdbc-3.39.2.0.jar" />
+  </library>
+  <library name="apktool">
+    <archive path="/Users/shifatsahariar/MyGitRep/ReApkSmali/lib/apktool.jar" />
+  </library>
+</eclipse-userlibraries>
+

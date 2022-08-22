@@ -17,7 +17,7 @@ public class Main {
         String inputPath = "./input";
         File theDir = new File("./output");
         Decoder decoder = new Decoder(inputPath);
-//        ReadManifestFile readManifestFile = new ReadManifestFile();
+        ReadManifestFile readManifestFile = new ReadManifestFile();
 //        ReadActivitiesFile readActivitiesFile = new ReadActivitiesFile();
         //DB CONNECTION
         List<HashMap<String, String>> databaseTable = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Main {
         //connDB.clear_data();
         //** Decode the APk
 
-       // decoder.apkDecoder();//Step ONE
+         decoder.apkDecoder();//Step ONE
         //** Store Output APk Folders in a List
         String[] directories = theDir.list((dir, name) -> new File(dir, name).isDirectory());
         List<String> apkDirectory = Arrays.stream(directories).collect(Collectors.toList()); //Step Two
@@ -54,10 +54,13 @@ public class Main {
             activitiesInfoForDB = ReadActivitiesFile.getActivitiesInfoForDB();
 
 
+
             //System.out.println(activityWithSupportedActions);
 
             try {
                 for (int i = 0; i < activitiesInfoForDB.size(); i++) {
+
+
 
                     connDB.insert(
                             (String) activitiesInfoForDB.get(i).get("packageName"),
@@ -69,6 +72,8 @@ public class Main {
                             (String) activitiesInfoForDB.get(i).get("intentValue"),
                             (String) activitiesInfoForDB.get(i).get("putSig")
                     );
+
+
                 }
 
             } catch (NullPointerException nullPointerException) {
@@ -90,6 +95,7 @@ public class Main {
             System.out.print(" | className: " + row.get("className"));
             System.out.print(" | supportedAction: " + row.get("supportedAction"));
             System.out.print(" | targetComponent: " + row.get("targetComponent"));
+            System.out.print(" | targetAction: " + row.get("targetAction"));
             System.out.print(" | intentKey: " + row.get("intentKey"));
             System.out.print(" | intentValue: " + row.get("intentValue"));
             System.out.print(" | putSig: " + row.get("putSig"));
@@ -104,12 +110,14 @@ public class Main {
         try {
             //First loop to iterate for every targetActions
             for (int i = 0; i < databaseTable.size(); i++) {
-                if (databaseTable.get(i).get("targetAction").contains("action.SEND")) {
+                if (databaseTable.get(i).get("targetAction").trim().contains("action.SEND")) {
+                   // System.out.println(databaseTable.get(i).get("targetAction").toLowerCase());
                     //Second Loop to iterate for every Supported Action
                     for (int j = 0; j < databaseTable.size(); j++) {
 
                         if (databaseTable.get(i).get("targetAction")
                                 .equals(databaseTable.get(j).get("supportedAction"))) {
+                            //System.out.println(databaseTable.get(i).get("targetAction"));
 
                             if (databaseTable.get(i).get("packageName")
                                     .equals((databaseTable.get(j).get("packageName")))) {
@@ -128,6 +136,7 @@ public class Main {
 
 
                         }
+                        //else System.out.println("No Inter App Communication Found");
                     }
 
                 }
